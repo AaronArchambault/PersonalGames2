@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913509abb6ec8db46b53c9c68002c5e1, type: 3}
+  m_Name: EvolutionDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::CowEvolutionDatabase
+  tiers:
+  - {fileID: 11400000, guid: 9ce901aaa4ef6a547b0c0778c37a8a5f, type: 2}
+  - {fileID: 11400000, guid: 6627ce60b5953644099236fdfdbacffe, type: 2}
+  - {fileID: 11400000, guid: d44f1cc8fffe5874aae20d13ebd59048, type: 2}
+  - {fileID: 11400000, guid: 10c6a4d8465e3fb4983b9533706cfd10, type: 2}
+  - {fileID: 11400000, guid: 12f3670466ce70e4bb2d50ae4c7d1252, type: 2}
+  - {fileID: 11400000, guid: 8304a8b9d15fc244aa699315104c16b9, type: 2}
+  - {fileID: 11400000, guid: 2e3493d0b3909d141a0edf59318d8f3c, type: 2}
+  - {fileID: 11400000, guid: f317a7d795a96f34c87c6f0f9087516e, type: 2}
