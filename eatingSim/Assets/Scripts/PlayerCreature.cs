@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Collections;
 
 /// <summary>
 /// PlayerCreature — movement, eating, growing, and taking damage.
-/// Attach to the Player GameObject. Tag the GameObject "Player".
+/// Uses the NEW Unity Input System (Mouse + Keyboard classes).
+/// Attach to the Player GameObject and tag it "Player".
 /// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CircleCollider2D))]
@@ -11,17 +13,16 @@ public class PlayerCreature : MonoBehaviour
 {
     // ── Inspector ─────────────────────────────────────────
     [Header("Movement")]
-    public float baseSpeed       = 5f;
-    public float smoothing       = 0.15f;
+    public float baseSpeed        = 5f;
+    public float smoothing        = 0.15f;
 
     [Header("Growth")]
-    public float startSize       = 0.5f;
+    public float startSize        = 0.5f;
     public float massPerSizeDouble = 50f;
-    public float maxSize         = 20f;
+    public float maxSize          = 20f;
 
     [Header("Damage")]
-    [Tooltip("Minimum size the player can shrink to before game over.")]
-    public float minSize         = 0.15f;
+    public float minSize          = 0.15f;
     public GameObject hitVFXPrefab;
     public AudioClip  hurtSound;
 
@@ -38,12 +39,16 @@ public class PlayerCreature : MonoBehaviour
     public bool  IsInvincible { get; private set; } = false;
 
     // ── Private ───────────────────────────────────────────
-    private Rigidbody2D    rb;
+    private Rigidbody2D      rb;
     private CircleCollider2D col;
-    private AudioSource    audioSource;
-    private SpriteRenderer sr;
-    private Vector2        targetPosition;
-    private Camera         mainCam;
+    private AudioSource      audioSource;
+    private SpriteRenderer   sr;
+    private Vector2          targetPosition;
+    private Camera           mainCam;
+
+    // New Input System device references
+    private Mouse    mouse;
+    private Keyboard keyboard;
 
     // ── Unity Lifecycle ───────────────────────────────────
     void Awake()
@@ -54,16 +59,21 @@ public class PlayerCreature : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
 
-        mainCam        = Camera.main;
-        rb.gravityScale = 0f;
-        rb.drag         = 2f;
+        mainCam          = Camera.main;
+        rb.gravityScale  = 0f;
+        rb.linearDamping = 2f;
 
         transform.localScale = Vector3.one * startSize;
         targetPosition       = rb.position;
+
+        mouse    = Mouse.current;
+        keyboard = Keyboard.current;
     }
 
     void Update()
     {
+        if (mouse    == null) mouse    = Mouse.current;
+        if (keyboard == null) keyboard = Keyboard.current;
         HandleInput();
     }
 
@@ -72,31 +82,39 @@ public class PlayerCreature : MonoBehaviour
         MoveTowardsTarget();
     }
 
-    // ── Input ─────────────────────────────────────────────
+    // ── Input (New Input System) ──────────────────────────
     void HandleInput()
     {
-        if (Input.GetMouseButton(0))
+        // Mouse: follow cursor while left button held
+        if (mouse != null && mouse.leftButton.isPressed)
         {
-            Vector3 wp     = mainCam.ScreenToWorldPoint(Input.mousePosition);
-            targetPosition = new Vector2(wp.x, wp.y);
+            Vector2 screenPos = mouse.position.ReadValue();
+            Vector3 wp        = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 0f));
+            targetPosition    = new Vector2(wp.x, wp.y);
         }
 
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        if (Mathf.Abs(h) > 0.01f || Mathf.Abs(v) > 0.01f)
+        // Keyboard: WASD / Arrow keys
+        if (keyboard != null)
         {
-            Vector2 dir    = new Vector2(h, v).normalized;
-            targetPosition = rb.position + dir * 2f;
+            float h = 0f, v = 0f;
+            if (keyboard.aKey.isPressed    || keyboard.leftArrowKey.isPressed)  h -= 1f;
+            if (keyboard.dKey.isPressed    || keyboard.rightArrowKey.isPressed) h += 1f;
+            if (keyboard.sKey.isPressed    || keyboard.downArrowKey.isPressed)  v -= 1f;
+            if (keyboard.wKey.isPressed    || keyboard.upArrowKey.isPressed)    v += 1f;
+
+            if (Mathf.Abs(h) > 0.01f || Mathf.Abs(v) > 0.01f)
+            {
+                Vector2 dir    = new Vector2(h, v).normalized;
+                targetPosition = rb.position + dir * 2f;
+            }
         }
     }
 
     void MoveTowardsTarget()
     {
-        float speedScale = 1f / Mathf.Max(1f, CurrentSize * 0.4f);
-        Vector2 next     = Vector2.Lerp(rb.position, targetPosition, smoothing);
+        Vector2 next = Vector2.Lerp(rb.position, targetPosition, smoothing);
         rb.MovePosition(next);
 
-        // Flip sprite
         float dx = targetPosition.x - rb.position.x;
         float sz = CurrentSize;
         if (dx >  0.05f) transform.localScale = new Vector3( sz, sz, 1f);
@@ -113,7 +131,6 @@ public class PlayerCreature : MonoBehaviour
             EatObject(edible);
         else
         {
-            // Bounce away — too big to eat
             Vector2 push = (rb.position - (Vector2)other.transform.position).normalized;
             rb.AddForce(push * 8f, ForceMode2D.Impulse);
         }
@@ -123,7 +140,6 @@ public class PlayerCreature : MonoBehaviour
     {
         Mass += edible.massValue;
         ApplyGrowth();
-
         PlayEatSound(edible.massValue);
         SpawnParticle(edible.transform.position, eatParticlePrefab);
         GameManager.Instance?.OnPlayerAte(edible.massValue, Mass);
@@ -141,32 +157,24 @@ public class PlayerCreature : MonoBehaviour
         edible.massValue <= Mass + startSize * massPerSizeDouble;
 
     // ── Taking Damage ─────────────────────────────────────
-    /// <summary>
-    /// Called by Obstacle and Enemy when they hit the player.
-    /// </summary>
     public void TakeDamage(float massDamage, float knockbackForce, Vector3 sourcePosition, float iframeDuration)
     {
         if (IsInvincible) return;
 
         Mass = Mathf.Max(0f, Mass - massDamage);
 
-        // Shrink
         float newSize = startSize + Mathf.Log(1f + Mass / massPerSizeDouble, 2f) * startSize;
         newSize       = Mathf.Max(newSize, minSize);
         SetSize(newSize);
 
-        // Knockback
         Vector2 push = (rb.position - (Vector2)sourcePosition).normalized;
         rb.AddForce(push * knockbackForce, ForceMode2D.Impulse);
 
-        // VFX / SFX
         SpawnParticle(transform.position, hitVFXPrefab);
         if (hurtSound != null) audioSource.PlayOneShot(hurtSound);
 
-        // Notify UI/manager
         GameManager.Instance?.OnPlayerDamaged(massDamage, Mass);
 
-        // Check death
         if (CurrentSize <= minSize + 0.01f)
         {
             GameManager.Instance?.TriggerGameOver();
@@ -176,11 +184,9 @@ public class PlayerCreature : MonoBehaviour
         StartCoroutine(IFrameRoutine(iframeDuration));
     }
 
-    IEnumerator IFrameRoutine(float duration)
+    System.Collections.IEnumerator IFrameRoutine(float duration)
     {
         IsInvincible = true;
-
-        // Flash the sprite during iframes
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -195,7 +201,7 @@ public class PlayerCreature : MonoBehaviour
     // ── Helpers ───────────────────────────────────────────
     void SetSize(float size)
     {
-        float signX   = Mathf.Sign(transform.localScale.x); // preserve flip
+        float signX          = Mathf.Sign(transform.localScale.x);
         transform.localScale = new Vector3(size * signX, size, 1f);
     }
 

@@ -47,8 +47,8 @@ public class Obstacle : MonoBehaviour
         {
             obstacleRb = GetComponent<Rigidbody2D>();
             if (obstacleRb == null) obstacleRb = gameObject.AddComponent<Rigidbody2D>();
-            obstacleRb.gravityScale = 0f;
-            obstacleRb.drag         = 0f;
+            obstacleRb.gravityScale  = 0f;
+            obstacleRb.linearDamping = 0f;
         }
 
         driftDirection = driftDirection.normalized;

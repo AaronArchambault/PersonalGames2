@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        spawner = FindObjectOfType<WorldSpawner>();
+        spawner = Object.FindAnyObjectByType<WorldSpawner>();
         tierUnlocks.Sort((a, b) => a.massNeeded.CompareTo(b.massNeeded));
     }
 

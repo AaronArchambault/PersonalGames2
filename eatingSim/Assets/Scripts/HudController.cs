@@ -30,7 +30,7 @@ public class HUDController : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<PlayerCreature>();
+        player = Object.FindAnyObjectByType<PlayerCreature>();
 
         var gm = GameManager.Instance;
         if (gm != null)

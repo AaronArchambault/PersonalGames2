@@ -52,8 +52,8 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0f;
-        rb.drag = 1.5f;
+        rb.gravityScale    = 0f;
+        rb.linearDamping   = 1.5f;
 
         sr = GetComponent<SpriteRenderer>();
 
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        var p = GameObject.FindGameObjectWithTag("Player");
+        var p = GameObject.FindWithTag("Player");
         if (p) player = p.GetComponent<PlayerCreature>();
     }
 

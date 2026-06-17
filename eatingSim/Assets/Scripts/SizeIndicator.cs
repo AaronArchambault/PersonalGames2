@@ -25,7 +25,7 @@ public class SizeIndicator : MonoBehaviour
 
     void Start()
     {
-        var p = GameObject.FindGameObjectWithTag("Player");
+        var p = GameObject.FindWithTag("Player");
         if (p) player = p.GetComponent<PlayerCreature>();
     }
 

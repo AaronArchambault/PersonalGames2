@@ -9,7 +9,7 @@ public class GameBootstrap : MonoBehaviour
 {
     void Awake()
     {
-        var player = FindObjectOfType<PlayerCreature>();
+        var player = Object.FindAnyObjectByType<PlayerCreature>();
         if (player == null) return;
 
         if (PlayerPrefs.HasKey("CharStartSize"))

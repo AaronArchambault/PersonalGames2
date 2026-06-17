@@ -66,7 +66,7 @@ public class WorldSpawner : MonoBehaviour
 
     void Start()
     {
-        var p = GameObject.FindGameObjectWithTag("Player");
+        var p = GameObject.FindWithTag("Player");
         if (p) { playerTransform = p.transform; player = p.GetComponent<PlayerCreature>(); }
     }
 

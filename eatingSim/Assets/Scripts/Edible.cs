@@ -30,8 +30,8 @@ public class Edible : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         if (rb == null) rb = gameObject.AddComponent<Rigidbody2D>();
-        rb.gravityScale = 0f;
-        rb.drag         = 1f;
+        rb.gravityScale    = 0f;
+        rb.linearDamping   = 1f;
 
         foreach (var c in GetComponents<Collider2D>())
             c.isTrigger = true;
@@ -41,7 +41,7 @@ public class Edible : MonoBehaviour
 
     void Start()
     {
-        var p = GameObject.FindGameObjectWithTag("Player");
+        var p = GameObject.FindWithTag("Player");
         if (p) playerTransform = p.transform;
     }
 
