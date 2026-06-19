@@ -1627,7 +1627,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639613240}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 385891474}
+        m_TargetAssemblyTypeName: TowerUpgradeUI, Assembly-CSharp
+        m_MethodName: OnClickUpgradeB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639613240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2400,7 +2412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2506,7 +2518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1113917158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 385891474}
+        m_TargetAssemblyTypeName: TowerUpgradeUI, Assembly-CSharp
+        m_MethodName: OnClickSell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1113917158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,7 +2991,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1273442364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2088309157}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnStartWaveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1275978293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,7 +3087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1275978296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 385891474}
+        m_TargetAssemblyTypeName: TowerUpgradeUI, Assembly-CSharp
+        m_MethodName: OnClickUpgradeA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1275978296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3279,7 +3327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3806,25 +3854,25 @@ MonoBehaviour:
     prefab: {fileID: 4125889535831596319, guid: 1680b0cb3049d604cb4f466af908db0c, type: 3}
     initialSize: 20
   - tag: FastEnemy
-    prefab: {fileID: 0}
+    prefab: {fileID: 4125889535831596319, guid: 1680b0cb3049d604cb4f466af908db0c, type: 3}
     initialSize: 20
   - tag: ArmoredEnemy
-    prefab: {fileID: 0}
+    prefab: {fileID: 4125889535831596319, guid: 1680b0cb3049d604cb4f466af908db0c, type: 3}
     initialSize: 10
   - tag: SplitingEnemy
-    prefab: {fileID: 0}
+    prefab: {fileID: 4125889535831596319, guid: 1680b0cb3049d604cb4f466af908db0c, type: 3}
     initialSize: 8
   - tag: FlyingEnemy
-    prefab: {fileID: 0}
+    prefab: {fileID: 4125889535831596319, guid: 1680b0cb3049d604cb4f466af908db0c, type: 3}
     initialSize: 15
   - tag: Bullet
     prefab: {fileID: 5748778525863864937, guid: 7aef3c589294f3b46a587aaf52dc97de, type: 3}
     initialSize: 40
   - tag: SlowBullet
-    prefab: {fileID: 0}
+    prefab: {fileID: 5748778525863864937, guid: 7aef3c589294f3b46a587aaf52dc97de, type: 3}
     initialSize: 20
   - tag: BombShell
-    prefab: {fileID: 0}
+    prefab: {fileID: 5748778525863864937, guid: 7aef3c589294f3b46a587aaf52dc97de, type: 3}
     initialSize: 15
   - tag: FloatingText
     prefab: {fileID: 1171303888838589958, guid: 68485c09a3bc5d944a11461336f75000, type: 3}
@@ -3833,16 +3881,16 @@ MonoBehaviour:
     prefab: {fileID: 2084172044364426272, guid: 7eb3cb8ee7978c04fabb9719489241b3, type: 3}
     initialSize: 10
   - tag: HitEffect
-    prefab: {fileID: 0}
+    prefab: {fileID: 2084172044364426272, guid: 7eb3cb8ee7978c04fabb9719489241b3, type: 3}
     initialSize: 30
   - tag: DeathParticle
-    prefab: {fileID: 0}
+    prefab: {fileID: 2084172044364426272, guid: 7eb3cb8ee7978c04fabb9719489241b3, type: 3}
     initialSize: 20
   - tag: PlaceEffect
-    prefab: {fileID: 0}
+    prefab: {fileID: 2084172044364426272, guid: 7eb3cb8ee7978c04fabb9719489241b3, type: 3}
     initialSize: 10
   - tag: MuzzleFlash
-    prefab: {fileID: 0}
+    prefab: {fileID: 2084172044364426272, guid: 7eb3cb8ee7978c04fabb9719489241b3, type: 3}
     initialSize: 15
 --- !u!114 &1554740983
 MonoBehaviour:
@@ -3873,6 +3921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2075cfddebf1d2242975db8b287c19f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
+  loadFromJSON: 1
   waves: []
   spawnPoint: {fileID: 1157170836}
 --- !u!114 &1554740985
@@ -4251,7 +4300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5166,7 +5215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

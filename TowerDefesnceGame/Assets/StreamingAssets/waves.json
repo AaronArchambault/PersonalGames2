@@ -1,0 +1,44 @@
+{
+  "waves": [
+    {
+      "waveName": "Wave 1 - Basics",
+      "prewaveDelay": 1.0,
+      "enemies": [
+        { "poolTag": "BasicEnemy", "count": 8, "spawnInterval": 0.8 }
+      ]
+    },
+    {
+      "waveName": "Wave 2 - Fast Blitz",
+      "prewaveDelay": 1.0,
+      "enemies": [
+        { "poolTag": "BasicEnemy", "count": 5, "spawnInterval": 0.5 },
+        { "poolTag": "FastEnemy",  "count": 8, "spawnInterval": 0.3 }
+      ]
+    },
+    {
+      "waveName": "Wave 3 - Armored Push",
+      "prewaveDelay": 1.5,
+      "enemies": [
+        { "poolTag": "ArmoredEnemy",   "count": 6, "spawnInterval": 1.2 },
+        { "poolTag": "SplittingEnemy", "count": 3, "spawnInterval": 2.0 }
+      ]
+    },
+    {
+      "waveName": "Wave 4 - Air Raid",
+      "prewaveDelay": 1.0,
+      "enemies": [
+        { "poolTag": "FlyingEnemy", "count": 10, "spawnInterval": 0.6 },
+        { "poolTag": "BasicEnemy",  "count": 5,  "spawnInterval": 0.8 }
+      ]
+    },
+    {
+      "waveName": "Wave 5 - Boss Rush",
+      "prewaveDelay": 2.0,
+      "enemies": [
+        { "poolTag": "SplittingEnemy", "count": 5, "spawnInterval": 1.5 },
+        { "poolTag": "FlyingEnemy",    "count": 8, "spawnInterval": 0.4 },
+        { "poolTag": "ArmoredEnemy",   "count": 8, "spawnInterval": 0.8 }
+      ]
+    }
+  ]
+}
