@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    void OnEnable()
+    /*void OnEnable()
     {
         GameManager.Instance.OnLivesChanged += UpdateLives;
         GameManager.Instance.OnGoldChanged  += UpdateGold;
@@ -61,10 +61,63 @@ public class UIManager : MonoBehaviour
         UpdateWave(GameManager.Instance.Wave);
         gameOverPanel.SetActive(false);
         if (victoryPanel) victoryPanel.SetActive(false);
+    }*/
+
+    // Scripts/UI/UIManager.cs — replace OnEnable and OnDisable
+
+// DELETE OnEnable and OnDisable entirely, replace with:
+
+void Start()
+{
+    // Subscribe to events here, after all Awake() calls have run
+    if (GameManager.Instance != null)
+    {
+        GameManager.Instance.OnLivesChanged += UpdateLives;
+        GameManager.Instance.OnGoldChanged  += UpdateGold;
+        GameManager.Instance.OnWaveChanged  += UpdateWave;
+        GameManager.Instance.OnGameOver     += ShowGameOver;
+    }
+    else Debug.LogError("UIManager: GameManager.Instance is null!");
+
+    if (WaveManager.Instance != null)
+    {
+        WaveManager.Instance.OnWaveStart        += OnWaveStart;
+        WaveManager.Instance.OnWaveComplete     += OnWaveComplete;
+        WaveManager.Instance.OnAllWavesComplete += OnVictory;
+    }
+    else Debug.LogError("UIManager: WaveManager.Instance is null!");
+
+    // Initialize display
+    if (GameManager.Instance != null)
+    {
+        UpdateLives(GameManager.Instance.Lives);
+        UpdateGold(GameManager.Instance.Gold);
+        UpdateWave(GameManager.Instance.Wave);
     }
 
-    void UpdateLives(int v) => livesText.text = $"❤  {v}";
-    void UpdateGold(int v)  => goldText.text  = $"⬡  {v}";
+    if (gameOverPanel) gameOverPanel.SetActive(false);
+    if (victoryPanel)  victoryPanel.SetActive(false);
+}
+
+void OnDestroy()
+{
+    if (GameManager.Instance != null)
+    {
+        GameManager.Instance.OnLivesChanged -= UpdateLives;
+        GameManager.Instance.OnGoldChanged  -= UpdateGold;
+        GameManager.Instance.OnWaveChanged  -= UpdateWave;
+        GameManager.Instance.OnGameOver     -= ShowGameOver;
+    }
+    if (WaveManager.Instance != null)
+    {
+        WaveManager.Instance.OnWaveStart        -= OnWaveStart;
+        WaveManager.Instance.OnWaveComplete     -= OnWaveComplete;
+        WaveManager.Instance.OnAllWavesComplete -= OnVictory;
+    }
+}
+
+void UpdateLives(int v) => livesText.text = $"Lives: {v}";
+void UpdateGold(int v)  => goldText.text  = $"Gold: {v}";
     void UpdateWave(int v)  => waveText.text  = $"Wave {v}";
 
     public void UpdateSpeedIndicator(bool fast)

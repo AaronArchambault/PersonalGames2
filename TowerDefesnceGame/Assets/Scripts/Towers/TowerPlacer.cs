@@ -16,7 +16,7 @@ public class TowerPlacer : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    void OnEnable()
+   /* void OnEnable()
     {
         InputHandler.Instance.OnClickPerformed      += OnClick;
         InputHandler.Instance.OnRightClickPerformed += OnRightClick;
@@ -31,7 +31,37 @@ public class TowerPlacer : MonoBehaviour
         InputHandler.Instance.OnRightClickPerformed -= OnRightClick;
         InputHandler.Instance.OnCancelPerformed     -= Cancel;
         InputHandler.Instance.OnSpeedUpChanged      -= OnSpeedUp;
+    }*/
+
+            // Scripts/Towers/TowerPlacer.cs — replace OnEnable and OnDisable
+
+void Start()
+{
+    if (InputHandler.Instance == null)
+    {
+        Debug.LogError("TowerPlacer: InputHandler.Instance is null! Make sure InputHandler is on the Managers GameObject and its Awake runs first.");
+        return;
     }
+    SubscribeInput();
+}
+
+void SubscribeInput()
+{
+    InputHandler.Instance.OnClickPerformed      += OnClick;
+    InputHandler.Instance.OnRightClickPerformed += OnRightClick;
+    InputHandler.Instance.OnCancelPerformed     += Cancel;
+    InputHandler.Instance.OnSpeedUpChanged      += OnSpeedUp;
+}
+
+void OnDisable()
+{
+    if (InputHandler.Instance == null) return;
+    InputHandler.Instance.OnClickPerformed      -= OnClick;
+    InputHandler.Instance.OnRightClickPerformed -= OnRightClick;
+    InputHandler.Instance.OnCancelPerformed     -= Cancel;
+    InputHandler.Instance.OnSpeedUpChanged      -= OnSpeedUp;
+}
+
 
     public void BeginPlacement(GameObject prefab, int cost)
     {

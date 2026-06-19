@@ -18,7 +18,7 @@ public class ObjectPool : MonoBehaviour
     private Dictionary<string, Queue<GameObject>> poolDict = new();
     private Dictionary<string, Pool> poolLookup = new();
 
-    void Awake()
+    /*void Awake()
     {
         if (Instance == null) Instance = this;
         else { Destroy(gameObject); return; }
@@ -31,7 +31,30 @@ public class ObjectPool : MonoBehaviour
                 queue.Enqueue(CreateNew(pool));
             poolDict[pool.tag] = queue;
         }
+    }*/
+    void Awake()
+{
+    if (Instance == null) Instance = this;
+    else { Destroy(gameObject); return; }
+
+    foreach (var pool in pools)
+    {
+        // SKIP pools with no prefab assigned
+        if (pool.prefab == null)
+        {
+            Debug.LogWarning($"[ObjectPool] Pool '{pool.tag}' has no prefab assigned — skipping.");
+            poolDict[pool.tag] = new Queue<GameObject>();
+            poolLookup[pool.tag] = pool;
+            continue;
+        }
+
+        poolLookup[pool.tag] = pool;
+        var queue = new Queue<GameObject>();
+        for (int i = 0; i < pool.initialSize; i++)
+            queue.Enqueue(CreateNew(pool));
+        poolDict[pool.tag] = queue;
     }
+}
 
     GameObject CreateNew(Pool pool)
     {
