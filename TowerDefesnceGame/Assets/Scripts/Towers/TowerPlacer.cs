@@ -9,6 +9,7 @@ public class TowerPlacer : MonoBehaviour
     private GameObject previewObj;
     private TowerPlacementPreview preview;
     private bool isPlacing = false;
+    public bool IsPlacing => isPlacing;
 
     void Awake()
     {
