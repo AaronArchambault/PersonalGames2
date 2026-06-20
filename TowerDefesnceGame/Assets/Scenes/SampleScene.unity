@@ -6068,6 +6068,42 @@ MonoBehaviour:
   - tag: MuzzleFlash
     prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
     initialSize: 15
+  - tag: ScoutMouse
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 20
+  - tag: ArmouredRat
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 10
+  - tag: CheeseBomber
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 8
+  - tag: NinjaMouse
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 10
+  - tag: CrowEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 12
+  - tag: SeagullEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 12
+  - tag: RoombEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 8
+  - tag: RobotRatEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 6
+  - tag: MegaRoomba
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 1
+  - tag: SmokeEffect
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 10
+  - tag: ChonkSit
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 15
+  - tag: KittenBall
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 40
 --- !u!114 &1554740983
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
+  m_Name: LaserEyeCatUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
+  towerName: LaserEyeCat
+  pathA:
+  - upgradeName: Focused Pupils
+    description: 
+    cost: 90
+    damageBonus: 20
+    rangeBonus: 0
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Twin Laser Eyes
+    description: 
+    cost: 160
+    damageBonus: 40
+    rangeBonus: 0.5
+    fireRateBonus: 0.3
+    icon: {fileID: 0}
+  - upgradeName: Death Stare
+    description: 
+    cost: 250
+    damageBonus: 80
+    rangeBonus: 1
+    fireRateBonus: 0.62
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: Chain Reaction
+    description: 
+    cost: 100
+    damageBonus: 5
+    rangeBonus: 0
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Arc Lighting
+    description: 
+    cost: 175
+    damageBonus: 11
+    rangeBonus: 0.55
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: ball Lighting
+    description: 
+    cost: 275
+    damageBonus: 23
+    rangeBonus: 1
+    fireRateBonus: 0.3
+    icon: {fileID: 0}

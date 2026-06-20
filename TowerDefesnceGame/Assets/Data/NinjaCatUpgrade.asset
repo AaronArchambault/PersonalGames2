@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
+  m_Name: NinjaCatUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
+  towerName: NinjaCat
+  pathA:
+  - upgradeName: Sharpened Claws
+    description: 
+    cost: 100
+    damageBonus: 80
+    rangeBonus: 0
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Poison Claws
+    description: 
+    cost: 175
+    damageBonus: 155
+    rangeBonus: 0.52
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: One Hit Wonder
+    description: 
+    cost: 280
+    damageBonus: 300
+    rangeBonus: 1.1
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: Quick Paws
+    description: 
+    cost: 90
+    damageBonus: 0
+    rangeBonus: 0
+    fireRateBonus: 0.31
+    icon: {fileID: 0}
+  - upgradeName: Shadow Step
+    description: 
+    cost: 160
+    damageBonus: 30
+    rangeBonus: 0.5
+    fireRateBonus: 0.52
+    icon: {fileID: 0}
+  - upgradeName: Instant Kill Protocol
+    description: 
+    cost: 260
+    damageBonus: 52
+    rangeBonus: 1.1
+    fireRateBonus: 1.2
+    icon: {fileID: 0}

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
+  m_Name: PrinterCatUpgrades
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
+  towerName: PrinterCat
+  pathA:
+  - upgradeName: Louder Printer
+    description: 
+    cost: 85
+    damageBonus: 20
+    rangeBonus: 0.5
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Paper Jam Rage
+    description: 
+    cost: 150
+    damageBonus: 40
+    rangeBonus: 0.5
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Full MeltDown
+    description: 
+    cost: 240
+    damageBonus: 80
+    rangeBonus: 1
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: anxious Cat
+    description: 
+    cost: 80
+    damageBonus: 10
+    rangeBonus: 0
+    fireRateBonus: 0.5
+    icon: {fileID: 0}
+  - upgradeName: High Strung
+    description: 
+    cost: 140
+    damageBonus: 21
+    rangeBonus: 0
+    fireRateBonus: 1
+    icon: {fileID: 0}
+  - upgradeName: Perpetual Terror
+    description: 
+    cost: 220
+    damageBonus: 32
+    rangeBonus: 0.5
+    fireRateBonus: 1.55
+    icon: {fileID: 0}

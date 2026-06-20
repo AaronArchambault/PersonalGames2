@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
+  m_Name: ChoinkCatUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
+  towerName: Chonk Cat
+  pathA:
+  - upgradeName: Extra Treats
+    description: 
+    cost: 90
+    damageBonus: 10
+    rangeBonus: 0
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Maximum Chonk
+    description: 
+    cost: 160
+    damageBonus: 20
+    rangeBonus: 0.5
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Absolute Unit
+    description: 
+    cost: 260
+    damageBonus: 42
+    rangeBonus: 1
+    fireRateBonus: 0.3
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: Wider Belly
+    description: 
+    cost: 80
+    damageBonus: 0
+    rangeBonus: 0.55
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Chonk Zone
+    description: 
+    cost: 140
+    damageBonus: 5
+    rangeBonus: 1.11
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Gravity Well
+    description: 
+    cost: 220
+    damageBonus: 10
+    rangeBonus: 1.7
+    fireRateBonus: 0.1
+    icon: {fileID: 0}

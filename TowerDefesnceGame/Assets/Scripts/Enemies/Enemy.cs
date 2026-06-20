@@ -4,6 +4,10 @@ using System.Collections;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour, IPoolable
 {
+
+    [Header("Enemy Type")]
+    public string enemyTheme = "mouse"; // "mouse", "bird", "robot"
+
     [Header("Stats")]
     public float maxHealth = 100f;
     public float moveSpeed = 2f;

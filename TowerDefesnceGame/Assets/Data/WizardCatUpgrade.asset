@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
+  m_Name: WizardCatUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
+  towerName: WizardCat
+  pathA:
+  - upgradeName: Bigger Hat
+    description: 
+    cost: 100
+    damageBonus: 20
+    rangeBonus: 0
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Spell Mastery
+    description: 
+    cost: 180
+    damageBonus: 40
+    rangeBonus: 0.5
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Arch Mage
+    description: 
+    cost: 290
+    damageBonus: 85
+    rangeBonus: 1
+    fireRateBonus: 0.41
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: Quick Cast
+    description: 
+    cost: 90
+    damageBonus: 0
+    rangeBonus: 0
+    fireRateBonus: 0.4
+    icon: {fileID: 0}
+  - upgradeName: Double Cast
+    description: 
+    cost: 160
+    damageBonus: 10
+    rangeBonus: 0.1
+    fireRateBonus: 0.78
+    icon: {fileID: 0}
+  - upgradeName: Spell Spam
+    description: 
+    cost: 260
+    damageBonus: 21
+    rangeBonus: 0.55
+    fireRateBonus: 1.31
+    icon: {fileID: 0}

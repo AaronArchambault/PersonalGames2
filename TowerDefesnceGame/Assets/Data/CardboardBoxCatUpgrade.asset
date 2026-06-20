@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
+  m_Name: CardboardBoxCatUpgrade
+  m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
+  towerName: CardboardBox Cat
+  pathA:
+  - upgradeName: Sharp Claws
+    description: 
+    cost: 80
+    damageBonus: 50
+    rangeBonus: 0
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Mega Pounce
+    description: 
+    cost: 140
+    damageBonus: 100
+    rangeBonus: 0.3
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Ultra Pounce
+    description: 
+    cost: 220
+    damageBonus: 200
+    rangeBonus: 0.5
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: Nap Recovery
+    description: 
+    cost: 75
+    damageBonus: 0
+    rangeBonus: 0.35
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  - upgradeName: Cat Nap Speed
+    description: 
+    cost: 130
+    damageBonus: 0
+    rangeBonus: 0
+    fireRateBonus: 0.7
+    icon: {fileID: 0}
+  - upgradeName: Instant Pounce
+    description: 
+    cost: 200
+    damageBonus: 30
+    rangeBonus: 0
+    fireRateBonus: 1.35
+    icon: {fileID: 0}
