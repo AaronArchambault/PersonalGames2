@@ -10,50 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
-  m_Name: SlowTowerUpgrade
+  m_Name: LaserTowerUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
-  towerName: SlowTower
+  towerName: LaserTower
   pathA:
-  - upgradeName: Deep Freeze
+  - upgradeName: Focused Beam
     description: 
-    cost: 90
-    damageBonus: 0
-    rangeBonus: 0.5
-    fireRateBonus: 0.3
+    cost: 100
+    damageBonus: 15
+    rangeBonus: 0
+    fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: Permafrost
+  - upgradeName: Plasma Beam
     description: 
-    cost: 150
-    damageBonus: 5
+    cost: 175
+    damageBonus: 30
     rangeBonus: 0.5
-    fireRateBonus: 0.3
+    fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: Absolute Zero
+  - upgradeName: Death Ray
     description: 
-    cost: 230
-    damageBonus: 10
+    cost: 275
+    damageBonus: 60
     rangeBonus: 1
-    fireRateBonus: 0.55
+    fireRateBonus: 0
     icon: {fileID: 0}
   pathB:
-  - upgradeName: longReach
+  - upgradeName: Extened Optics
     description: 
-    cost: 80
+    cost: 90
     damageBonus: 0
     rangeBonus: 1
     fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: Artic Wind
+  - upgradeName: Long Range Laser
     description: 
-    cost: 140
-    damageBonus: 0
-    rangeBonus: 1.5
-    fireRateBonus: 0.2
+    cost: 160
+    damageBonus: 10
+    rangeBonus: 1.55
+    fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: Blizzard
+  - upgradeName: Orbital Strike
     description: 
-    cost: 210
-    damageBonus: 5
-    rangeBonus: 2
-    fireRateBonus: 0.31
+    cost: 260
+    damageBonus: 21
+    rangeBonus: 3.1
+    fireRateBonus: 0
     icon: {fileID: 0}

@@ -108,9 +108,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1026776995
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4948644927685383766, guid: 1b19127cee515704f9a6292fe6765d9c, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -5242,8 +5242,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1026776995
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4948644927685383766, guid: 1b19127cee515704f9a6292fe6765d9c, type: 3}
@@ -5318,7 +5318,7 @@ MonoBehaviour:
   baseFireRate: 1
   baseDamage: 40
   cost: 175
-  upgradeData: {fileID: 11400000, guid: 0568c42e7857c8e4ba34103feac0586e, type: 2}
+  upgradeData: {fileID: 11400000, guid: abf07b8a2fb1d1447b29ab03087b4071, type: 2}
   pathALevel: 0
   pathBLevel: 0
   targetMode: 0
@@ -5406,8 +5406,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1026776995
+  m_SortingLayer: 3
   m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4948644927685383766, guid: 1b19127cee515704f9a6292fe6765d9c, type: 3}

@@ -10,50 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
-  m_Name: SlowTowerUpgrade
+  m_Name: BombTowerUpgrades
   m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
-  towerName: SlowTower
+  towerName: BombTower
   pathA:
-  - upgradeName: Deep Freeze
+  - upgradeName: Heavy Shells
     description: 
-    cost: 90
-    damageBonus: 0
-    rangeBonus: 0.5
-    fireRateBonus: 0.3
-    icon: {fileID: 0}
-  - upgradeName: Permafrost
-    description: 
-    cost: 150
-    damageBonus: 5
-    rangeBonus: 0.5
-    fireRateBonus: 0.3
-    icon: {fileID: 0}
-  - upgradeName: Absolute Zero
-    description: 
-    cost: 230
-    damageBonus: 10
-    rangeBonus: 1
-    fireRateBonus: 0.55
-    icon: {fileID: 0}
-  pathB:
-  - upgradeName: longReach
-    description: 
-    cost: 80
-    damageBonus: 0
-    rangeBonus: 1
+    cost: 120
+    damageBonus: 40
+    rangeBonus: 0
     fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: Artic Wind
+  - upgradeName: Cluster Bomb
     description: 
-    cost: 140
-    damageBonus: 0
-    rangeBonus: 1.5
-    fireRateBonus: 0.2
+    cost: 200
+    damageBonus: 80
+    rangeBonus: 0.3
+    fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: Blizzard
+  - upgradeName: MOAB
     description: 
-    cost: 210
-    damageBonus: 5
-    rangeBonus: 2
-    fireRateBonus: 0.31
+    cost: 300
+    damageBonus: 150
+    rangeBonus: 0.5
+    fireRateBonus: 0
+    icon: {fileID: 0}
+  pathB:
+  - upgradeName: Speed Fuse
+    description: 
+    cost: 100
+    damageBonus: 0
+    rangeBonus: 0
+    fireRateBonus: 0.15
+    icon: {fileID: 0}
+  - upgradeName: Double Barrel
+    description: 
+    cost: 175
+    damageBonus: 20
+    rangeBonus: 0
+    fireRateBonus: 0.25
+    icon: {fileID: 0}
+  - upgradeName: Artillery
+    description: 
+    cost: 275
+    damageBonus: 40
+    rangeBonus: 0.5
+    fireRateBonus: 0.35
     icon: {fileID: 0}

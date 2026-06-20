@@ -44,8 +44,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2150018455
+    locked: 0
+  - name: Path
+    uniqueID: 965483577
+    locked: 0
+  - name: Towers
+    uniqueID: 3268190301
+    locked: 0
+  - name: Enemies
+    uniqueID: 3745845725
+    locked: 0
   - name: Projectiles
     uniqueID: 513894623
+    locked: 0
+  - name: Effects
+    uniqueID: 728879553
+    locked: 0
+  - name: UI
+    uniqueID: 2949505469
     locked: 0
   m_RenderingLayers:
   - Default

@@ -81,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -549121571
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7933474846516340325, guid: 9d299021930c55f47b3fc84144646795, type: 3}
@@ -147,7 +147,7 @@ MonoBehaviour:
   moveSpeed: 2
   reward: 10
   liveDamage: 1
-  deathParticlePrefab: {fileID: 0}
+  deathParticlePrefab: {fileID: 2084172044364426272, guid: 4e60b8c527efdab43846e3dc8e8ebfc5, type: 3}
   healthBar: {fileID: 3895832936531731794}
 --- !u!1 &5363655374581339536
 GameObject:
