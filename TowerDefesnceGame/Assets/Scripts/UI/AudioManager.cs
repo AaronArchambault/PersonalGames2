@@ -27,11 +27,17 @@ public class AudioManager : MonoBehaviour
         foreach (var s in sounds) lookup[s.name] = s;
     }
 
-    public void Play(string name)
-    {
-        if (!lookup.TryGetValue(name, out var s)) return;
-        float pitch = 1f + Random.Range(-s.pitchVariance, s.pitchVariance);
-        src.pitch = pitch;
-        src.PlayOneShot(s.clip, s.volume);
-    }
+ // In AudioManager.cs — update the Play method
+public void Play(string name)
+{
+    if (!lookup.TryGetValue(name, out var s)) return;
+    float pitch = 1f + Random.Range(-s.pitchVariance, s.pitchVariance);
+    src.pitch = pitch;
+    src.outputAudioMixerGroup = sfxMixerGroup; // ADD THIS
+    src.PlayOneShot(s.clip, s.volume);
+}
+
+// Add this field at the top of AudioManager
+[Header("Mixer")]
+public UnityEngine.Audio.AudioMixerGroup sfxMixerGroup;
 }

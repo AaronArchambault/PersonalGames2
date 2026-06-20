@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject accessibilityPanel;
     public GameObject creditsPanel;
     public GameObject confirmQuitPanel;
+    public GameObject graphicsPanel;
 
     [Header("Main Buttons")]
     public Button playButton;
@@ -46,6 +47,7 @@ public class MainMenuManager : MonoBehaviour
         mainPanel.SetActive(target == mainPanel);
         settingsPanel.SetActive(target == settingsPanel);
         if (audioPanel)       audioPanel.SetActive(target == audioPanel);
+        if (graphicsPanel) graphicsPanel.SetActive(target == graphicsPanel);
         if (accessibilityPanel) accessibilityPanel.SetActive(target == accessibilityPanel);
         if (creditsPanel)     creditsPanel.SetActive(target == creditsPanel);
         if (confirmQuitPanel) confirmQuitPanel.SetActive(target == confirmQuitPanel);
@@ -62,6 +64,7 @@ public class MainMenuManager : MonoBehaviour
     public void OnAudio()       => ShowPanel(audioPanel);
     public void OnAccessibility() => ShowPanel(accessibilityPanel);
     public void OnCredits()     => ShowPanel(creditsPanel);
+    public void OnGraphics() => ShowPanel(graphicsPanel);
 
     public void OnBack()        => ShowPanel(mainPanel);
 
