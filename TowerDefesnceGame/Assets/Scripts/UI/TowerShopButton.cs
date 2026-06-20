@@ -25,6 +25,19 @@ public class TowerShopButton : MonoBehaviour
         if (button) button.interactable = GameManager.Instance.Gold >= cost;
     }
 
-    public void OnClick() =>
-        TowerPlacer.Instance.BeginPlacement(towerPrefab, cost);
+   public void OnClick()
+{
+    if (GameManager.Instance.Gold < cost)
+    {
+        // Shake the button and show a floating "Not enough gold!" text
+        GetComponent<AnimatedButton>()?.PlayDenyShake();
+        FloatingTextPool.Instance?.Spawn(
+            transform.position,
+            "Not enough gold!",
+            Color.red);
+        AudioManager.Instance?.Play("btn_deny");
+        return;
+    }
+    TowerPlacer.Instance.BeginPlacement(towerPrefab, cost);
+}
 }

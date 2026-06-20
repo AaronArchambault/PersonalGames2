@@ -132,11 +132,16 @@ void UpdateGold(int v)  => goldText.text  = $"Gold: {v}";
         Announce($"Wave {wave}!", Color.yellow);
     }
 
-    void OnWaveComplete()
-    {
-        startWaveButton.interactable = true;
-        Announce("Wave clear!", Color.green);
-    }
+   void OnWaveComplete()
+{
+    startWaveButton.interactable = true;
+
+    // Pulse the button to draw attention
+    var anim = startWaveButton.GetComponent<AnimatedButton>();
+    anim?.TriggerPulseOnce();
+
+    Announce("Wave clear!", Color.green);
+}
 
     void OnVictory()
     {
