@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 9093934412050703362}
   - component: {fileID: 2973881857875427161}
   - component: {fileID: 4748716855993086808}
-  - component: {fileID: 2263122716029419741}
+  - component: {fileID: 7019403076512988519}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: FlyingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.77737, y: -0.47144, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.55, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1495168730294389163}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7933474846516340325, guid: 9d299021930c55f47b3fc84144646795, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3679245, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.235
---- !u!114 &2263122716029419741
+--- !u!114 &7019403076512988519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,15 +140,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4125889535831596319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b16765a34b79b4a973f720e7b0cc4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 92687e633f1962847b679ccfe5c941d2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxHealth: 100
-  moveSpeed: 2
-  reward: 10
+  m_EditorClassIdentifier: Assembly-CSharp::FlyingEnemy
+  maxHealth: 80
+  moveSpeed: 3
+  reward: 20
   liveDamage: 1
   deathParticlePrefab: {fileID: 0}
   healthBar: {fileID: 3895832936531731794}
+  flyHeight: 0.3
 --- !u!1 &5363655374581339536
 GameObject:
   m_ObjectHideFlags: 0

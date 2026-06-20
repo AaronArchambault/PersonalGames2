@@ -224,9 +224,9 @@ GameObject:
   - component: {fileID: 2201745211581561832}
   - component: {fileID: 4398867482762303647}
   - component: {fileID: 3723767140275954906}
-  - component: {fileID: 8383250658221699259}
+  - component: {fileID: 2016995317386318125}
   m_Layer: 8
-  m_Name: BasicTower
+  m_Name: AOESprayerTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,7 +299,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4948644927685383766, guid: 1b19127cee515704f9a6292fe6765d9c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.97252804, g: 0.4009434, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -354,7 +354,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &8383250658221699259
+--- !u!114 &2016995317386318125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,13 +363,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7611731813169373018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd94669b919c9340b3524fd196ad234, type: 3}
+  m_Script: {fileID: 11500000, guid: c8eff3d95512e5840b089d0f2ef0407a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BasicTower
-  baseRange: 3
-  baseFireRate: 1.2
-  baseDamage: 25
-  cost: 100
+  m_EditorClassIdentifier: Assembly-CSharp::AOESprayerTower
+  baseRange: 2.55
+  baseFireRate: 3
+  baseDamage: 11
+  cost: 150
   upgradeData: {fileID: 11400000, guid: 0568c42e7857c8e4ba34103feac0586e, type: 2}
   pathALevel: 0
   pathBLevel: 0
@@ -378,6 +378,8 @@ MonoBehaviour:
   rangeIndicator: {fileID: 5459191820448636668}
   firePoint: {fileID: 2264914246487278495}
   bulletPoolTag: Bullet
+  bulletsPerShot: 6
+  spreadAngle: 50
 --- !u!1 &8249399445804672759
 GameObject:
   m_ObjectHideFlags: 0

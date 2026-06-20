@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4748716855993086808}
   - component: {fileID: 2263122716029419741}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: FastEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.77737, y: -0.47144, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1495168730294389163}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7933474846516340325, guid: 9d299021930c55f47b3fc84144646795, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.33962262, b: 0.20712553, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b16765a34b79b4a973f720e7b0cc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  maxHealth: 100
-  moveSpeed: 2
-  reward: 10
+  maxHealth: 50
+  moveSpeed: 4.5
+  reward: 15
   liveDamage: 1
   deathParticlePrefab: {fileID: 0}
   healthBar: {fileID: 3895832936531731794}

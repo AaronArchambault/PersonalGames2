@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8121227451358632708}
   - component: {fileID: 3696113852420706005}
   - component: {fileID: 1558964050670902720}
-  - component: {fileID: 3686690585802455128}
+  - component: {fileID: 7030260536415908266}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: SlowBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0.9445943, b: 0.4669811, a: 1}
+  m_Color: {r: 0.4666667, g: 1, b: 0.94455945, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,7 +129,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.1
---- !u!114 &3686690585802455128
+--- !u!114 &7030260536415908266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +138,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5748778525863864937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22cb98ee8b897bb4286b2e469727ae65, type: 3}
+  m_Script: {fileID: 11500000, guid: e51462455488dde44871909c2bdeae2e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  poolTag: Bullet
-  speed: 10
-  hitEffectTag: HitEffect
+  m_EditorClassIdentifier: Assembly-CSharp::SlowBullet
+  poolTag: SlowBullet
+  speed: 7

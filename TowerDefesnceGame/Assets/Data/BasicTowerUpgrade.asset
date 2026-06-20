@@ -10,50 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e5f845064947d24bb30e8ec08aabaad, type: 3}
-  m_Name: UpgradeData
+  m_Name: BasicTowerUpgrade
   m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeData
   towerName: BasicTower
   pathA:
-  - upgradeName: 
+  - upgradeName: Sharper Rounds
     description: 
-    cost: 0
-    damageBonus: 0
+    cost: 80
+    damageBonus: 15
     rangeBonus: 0
     fireRateBonus: 0
     icon: {fileID: 0}
-  - upgradeName: 
+  - upgradeName: Armor Piercing
     description: 
-    cost: 0
-    damageBonus: 0
+    cost: 140
+    damageBonus: 30
     rangeBonus: 0
-    fireRateBonus: 0
+    fireRateBonus: 0.2
     icon: {fileID: 0}
-  - upgradeName: 
+  - upgradeName: Explosve Rounds
     description: 
-    cost: 0
-    damageBonus: 0
+    cost: 220
+    damageBonus: 60
     rangeBonus: 0
-    fireRateBonus: 0
+    fireRateBonus: 0.3
     icon: {fileID: 0}
   pathB:
-  - upgradeName: 
+  - upgradeName: Quick Loader
     description: 
-    cost: 0
+    cost: 75
     damageBonus: 0
     rangeBonus: 0
-    fireRateBonus: 0
+    fireRateBonus: 0.5
     icon: {fileID: 0}
-  - upgradeName: 
+  - upgradeName: Rapid Fire
     description: 
-    cost: 0
+    cost: 130
     damageBonus: 0
-    rangeBonus: 0
-    fireRateBonus: 0
+    rangeBonus: 0.3
+    fireRateBonus: 0.8
     icon: {fileID: 0}
-  - upgradeName: 
+  - upgradeName: MiniGun
     description: 
-    cost: 0
-    damageBonus: 0
-    rangeBonus: 0
-    fireRateBonus: 0
+    cost: 200
+    damageBonus: 10
+    rangeBonus: 0.5
+    fireRateBonus: 1.5
     icon: {fileID: 0}
