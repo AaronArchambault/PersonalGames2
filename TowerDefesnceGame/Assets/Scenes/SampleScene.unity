@@ -564,7 +564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -323, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250556181
@@ -584,8 +584,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 10
+  m_ChildAlignment: 4
+  m_Spacing: 150
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -998,11 +998,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerUpgradeUI
   panel: {fileID: 385891472}
   towerNameText: {fileID: 1588971879}
-  pathANameText: {fileID: 672663461}
-  pathACostText: {fileID: 1486226231}
+  pathANameText: {fileID: 608226307}
+  pathACostText: {fileID: 1286074637}
   pathAButton: {fileID: 1275978295}
-  pathBNameText: {fileID: 608226307}
-  pathBCostText: {fileID: 1286074637}
+  pathBNameText: {fileID: 672663461}
+  pathBCostText: {fileID: 1486226231}
   pathBButton: {fileID: 639613239}
   sellValueText: {fileID: 1784453817}
   sellButton: {fileID: 1113917157}
@@ -2331,7 +2331,7 @@ GameObject:
   - component: {fileID: 608226308}
   - component: {fileID: 608226307}
   m_Layer: 5
-  m_Name: pathbTxt
+  m_Name: pathATxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3036,7 +3036,7 @@ GameObject:
   - component: {fileID: 672663462}
   - component: {fileID: 672663461}
   m_Layer: 5
-  m_Name: pathAtext
+  m_Name: pathBtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4167,14 +4167,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083514160}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1898604511}
   - {fileID: 618194060}
-  m_Father: {fileID: 2088309161}
+  m_Father: {fileID: 2098534688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4273,7 +4273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5306,7 +5306,7 @@ GameObject:
   - component: {fileID: 1286074638}
   - component: {fileID: 1286074637}
   m_Layer: 5
-  m_Name: pathbTxtcost
+  m_Name: pathATxtcost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6530,7 +6530,7 @@ GameObject:
   - component: {fileID: 1486226232}
   - component: {fileID: 1486226231}
   m_Layer: 5
-  m_Name: pathAtextcost
+  m_Name: pathBtextcost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6692,7 +6692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -725, y: -526}
+  m_AnchoredPosition: {x: -696, y: -432}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1540506547
@@ -9357,7 +9357,6 @@ RectTransform:
   m_Children:
   - {fileID: 385891473}
   - {fileID: 1321895023}
-  - {fileID: 1083514161}
   - {fileID: 2098534688}
   - {fileID: 1346559971}
   - {fileID: 1646494258}
@@ -9420,7 +9419,7 @@ MonoBehaviour:
   itemContainer: {fileID: 250556180}
   itemButtonPrefab: {fileID: 6287313528696058675, guid: 7e0d54bafe7631d4c98eafadd5f3cb1d, type: 3}
   timerText: {fileID: 1699913470}
-  shopOpenDuration: 20
+  shopOpenDuration: 15
 --- !u!1 &2098534687
 GameObject:
   m_ObjectHideFlags: 0
@@ -9456,6 +9455,7 @@ RectTransform:
   - {fileID: 202857078}
   - {fileID: 1273442363}
   - {fileID: 1918602476}
+  - {fileID: 1083514161}
   m_Father: {fileID: 2088309161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
