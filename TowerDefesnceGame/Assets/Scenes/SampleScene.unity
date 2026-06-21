@@ -6104,6 +6104,33 @@ MonoBehaviour:
   - tag: KittenBall
     prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
     initialSize: 40
+  - tag: GoldCoin
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 30
+  - tag: YarnBall
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 20
+  - tag: RatKing
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 2
+  - tag: PigeonHorde
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 40
+  - tag: OwlBoss
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 2
+  - tag: ParrotEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 8
+  - tag: DroneEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 10
+  - tag: RCCarEnemy
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 10
+  - tag: SmokeEffect
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 15
 --- !u!114 &1554740983
 MonoBehaviour:
   m_ObjectHideFlags: 0

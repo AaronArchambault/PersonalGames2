@@ -101,6 +101,8 @@ public class Enemy : MonoBehaviour, IPoolable
         if (flashRoutine != null) StopCoroutine(flashRoutine);
         flashRoutine = StartCoroutine(FlashHit());
 
+        GetComponent<EnemyHurtSounds>()?.PlayHurtSound();
+
         // Floating damage number
         FloatingTextPool.Instance?.Spawn(
             transform.position + Vector3.up * 0.4f,
@@ -142,9 +144,21 @@ public class Enemy : MonoBehaviour, IPoolable
             transform.position + Vector3.up * 0.7f,
             $"+{reward}g", Color.yellow);
 
+            var coin = ObjectPool.Instance.Spawn("GoldCoin", transform.position, Quaternion.identity);
+if (coin != null)
+{
+    // Get HUD gold icon world position
+    Vector3 hudPos = UIManager.Instance != null
+        ? UIManager.Instance.goldText.transform.position
+        : Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 0.95f, 10f));
+    coin.GetComponent<GoldCoinBounce>()?.Launch(transform.position, hudPos);
+}
+
         // Death particles
         if (deathParticlePrefab)
             ObjectPool.Instance.Spawn("DeathParticle", transform.position, Quaternion.identity);
+
+            GetComponent<EnemyHurtSounds>()?.PlayDeathSound();
 
         OnDied?.Invoke();
         ObjectPool.Instance.Despawn(poolTag, gameObject);

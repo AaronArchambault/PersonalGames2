@@ -117,6 +117,14 @@ public abstract class Tower : MonoBehaviour
         // Update range indicator scale
         if (rangeIndicator)
             rangeIndicator.transform.localScale = Vector3.one * Range * 2f;
+
+
+                var motherBoost = GetComponent<MotherCatBoost>();
+                if (motherBoost != null)
+                {
+                     FireRate += motherBoost.fireRateBonus;
+                    Damage   += motherBoost.damageBonus;
+                }   
     }
 
     public bool TryUpgrade(int path)
