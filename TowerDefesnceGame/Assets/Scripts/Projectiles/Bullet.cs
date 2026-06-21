@@ -63,14 +63,44 @@ public class Bullet : MonoBehaviour, IPoolable
 
         if (Vector2.Distance(transform.position, target.position) < 0.15f)
             Hit();
+
+           // In Bullet.Update() — apply wind when in Rooftop level
+if (LevelThemeManager.HasWind)
+{
+    Vector2 wind = LevelThemeManager.WindForce * Time.deltaTime * 0.3f;
+    transform.position += (Vector3)wind;
+} 
     }
 
-    void Hit()
+
+private Tower sourceTower;
+
+public void Setup(Transform t, float dmg, Tower source = null)
+{
+    target      = t;
+    damage      = dmg;
+    sourceTower = source;
+}
+
+void Hit()
+{
+    var e = target?.GetComponent<Enemy>();
+    if (e != null)
+    {
+        e.TakeDamage(damage);
+        // If enemy dies, credit kill to tower
+        if (e.GetHealth() <= 0 && sourceTower != null)
+            sourceTower.killCount++;
+    }
+    ObjectPool.Instance.Spawn(hitEffectTag, transform.position, Quaternion.identity);
+    Despawn();
+}
+    /*void Hit()
     {
         target?.GetComponent<Enemy>()?.TakeDamage(damage);
         ObjectPool.Instance.Spawn(hitEffectTag, transform.position, Quaternion.identity);
         Despawn();
-    }
+    }*/
 
     void Despawn()
     {

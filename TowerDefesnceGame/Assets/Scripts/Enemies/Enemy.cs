@@ -1,86 +1,90 @@
+
 using UnityEngine;
 using System.Collections;
-
+ 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour, IPoolable
 {
-
-    [Header("Enemy Type")]
-    public string enemyTheme = "mouse"; // "mouse", "bird", "robot"
-
     [Header("Stats")]
-    public float maxHealth = 100f;
-    public float moveSpeed = 2f;
-    public int reward = 10;
-    public int liveDamage = 1;
-
+    public float maxHealth  = 100f;
+    public float moveSpeed  = 2f;
+    public int   reward     = 10;
+    public int   liveDamage = 1;
+ 
     [Header("Visual Feedback")]
     public GameObject deathParticlePrefab;
-    public HealthBar healthBar;
-
+    public HealthBar  healthBar;
+ 
     // Runtime
     protected float currentHealth;
     protected float currentSpeed;
-    protected int waypointIndex = 0;
+    protected int   waypointIndex = 0;
     protected SpriteRenderer sr;
-    private string poolTag;
-    private bool isDead = false;
+ 
+    // Changed from private to protected so subclasses can access it
+    protected string poolTag;
+ 
+    private bool      isDead      = false;
     private Coroutine flashRoutine;
-
+ 
     // Slow state
-    private float slowTimer = 0f;
+    private float slowTimer      = 0f;
     private float slowMultiplier = 1f;
-
+ 
     // Events
     public event System.Action OnDied;
-
-    // IPoolable
+ 
+    // ── IPoolable ─────────────────────────────────────────────
+ 
     public void OnCreated(string tag) => poolTag = tag;
-
+ 
     public virtual void OnSpawn()
     {
         currentHealth = maxHealth;
-        currentSpeed = moveSpeed;
+        currentSpeed  = moveSpeed;
         waypointIndex = 0;
-        isDead = false;
-        slowTimer = 0f;
+        isDead        = false;
+        slowTimer     = 0f;
         slowMultiplier = 1f;
         if (healthBar) healthBar.SetFill(1f);
         if (sr) sr.color = Color.white;
     }
-
+ 
     public void OnDespawn() { }
-
+ 
+    // ── Lifecycle ─────────────────────────────────────────────
+ 
     protected virtual void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
     }
-
+ 
     protected virtual void Update()
     {
         HandleSlow();
         Move();
     }
-
+ 
+    // ── Movement ──────────────────────────────────────────────
+ 
     protected virtual void Move()
     {
         var waypoints = WaypointManager.Instance.waypoints;
         if (waypointIndex >= waypoints.Length) { Leak(); return; }
-
+ 
         Transform target = waypoints[waypointIndex];
         float effectiveSpeed = currentSpeed * slowMultiplier;
         transform.position = Vector2.MoveTowards(
             transform.position, target.position, effectiveSpeed * Time.deltaTime);
-
-        // Flip sprite based on movement direction
-        Vector2 dir = (target.position - transform.position);
+ 
+        Vector2 dir = target.position - transform.position;
         if (Mathf.Abs(dir.x) > 0.01f)
             sr.flipX = dir.x < 0;
-
+ 
         if (Vector2.Distance(transform.position, target.position) < 0.05f)
             waypointIndex++;
     }
-
+ 
     void HandleSlow()
     {
         if (slowTimer > 0)
@@ -89,33 +93,33 @@ public class Enemy : MonoBehaviour, IPoolable
             if (slowTimer <= 0) slowMultiplier = 1f;
         }
     }
-
+ 
+    // ── Damage ────────────────────────────────────────────────
+ 
     public virtual void TakeDamage(float amount)
     {
         if (isDead) return;
         currentHealth -= amount;
+ 
         float fill = Mathf.Clamp01(currentHealth / maxHealth);
         if (healthBar) healthBar.SetFill(fill);
-
-        // Flash white on hit
+ 
         if (flashRoutine != null) StopCoroutine(flashRoutine);
         flashRoutine = StartCoroutine(FlashHit());
-
-        GetComponent<EnemyHurtSounds>()?.PlayHurtSound();
-
-        // Floating damage number
+ 
         FloatingTextPool.Instance?.Spawn(
             transform.position + Vector3.up * 0.4f,
             Mathf.RoundToInt(amount).ToString(),
             Color.white);
-
+ 
+        GetComponent<EnemyHurtSounds>()?.PlayHurtSound();
+ 
         if (currentHealth <= 0) Die();
     }
-
+ 
     IEnumerator FlashHit()
     {
         sr.color = Color.white;
-        // Quick flash to red, then back
         float t = 0;
         while (t < 0.08f)
         {
@@ -132,38 +136,30 @@ public class Enemy : MonoBehaviour, IPoolable
         }
         sr.color = Color.white;
     }
-
+ 
+    // ── Death / Leak ──────────────────────────────────────────
+ 
     protected virtual void Die()
     {
         if (isDead) return;
         isDead = true;
+ 
         GameManager.Instance.EarnGold(reward);
-
-        // Floating gold number
+ 
         FloatingTextPool.Instance?.Spawn(
             transform.position + Vector3.up * 0.7f,
             $"+{reward}g", Color.yellow);
-
-            var coin = ObjectPool.Instance.Spawn("GoldCoin", transform.position, Quaternion.identity);
-if (coin != null)
-{
-    // Get HUD gold icon world position
-    Vector3 hudPos = UIManager.Instance != null
-        ? UIManager.Instance.goldText.transform.position
-        : Camera.main.ViewportToWorldPoint(new Vector3(0.1f, 0.95f, 10f));
-    coin.GetComponent<GoldCoinBounce>()?.Launch(transform.position, hudPos);
-}
-
-        // Death particles
+ 
         if (deathParticlePrefab)
-            ObjectPool.Instance.Spawn("DeathParticle", transform.position, Quaternion.identity);
-
-            GetComponent<EnemyHurtSounds>()?.PlayDeathSound();
-
+            ObjectPool.Instance.Spawn("DeathParticle",
+                transform.position, Quaternion.identity);
+ 
+        GetComponent<EnemyHurtSounds>()?.PlayDeathSound();
+ 
         OnDied?.Invoke();
         ObjectPool.Instance.Despawn(poolTag, gameObject);
     }
-
+ 
     protected virtual void Leak()
     {
         if (isDead) return;
@@ -172,16 +168,19 @@ if (coin != null)
         OnDied?.Invoke();
         ObjectPool.Instance.Despawn(poolTag, gameObject);
     }
-
+ 
+    // ── Slow ──────────────────────────────────────────────────
+ 
     public void ApplySlow(float factor, float duration)
     {
         slowMultiplier = 1f - Mathf.Clamp01(factor);
-        slowTimer = duration;
-        // Tint blue when slowed
-        sr.color = new Color(0.4f, 0.7f, 1f);
+        slowTimer      = duration;
+        if (sr) sr.color = new Color(0.4f, 0.7f, 1f);
     }
-
-    public int  GetWaypointIndex() => waypointIndex;
-    public float GetHealth()       => currentHealth;
+ 
+    // ── Accessors ─────────────────────────────────────────────
+ 
+    public int   GetWaypointIndex()      => waypointIndex;
+    public float GetHealth()             => currentHealth;
     public void  SetWaypointIndex(int i) => waypointIndex = i;
 }

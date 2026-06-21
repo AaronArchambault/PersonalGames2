@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238150f11ddd17f49b3d86b10e00a195, type: 3}
+  m_Name: KitchenTheme
+  m_EditorClassIdentifier: Assembly-CSharp::LevelTheme
+  themeType: 2
+  themeName: Kitchen
+  themeDescription: Counter tops provide cover. The fridge blocks the path!
+  themeColor: {r: 0.5707547, g: 1, b: 0.9750625, a: 1}
+  themeIcon: {fileID: 0}
+  towerCostMultiplier: 1
+  towerDamageMultiplier: 1.1
+  towerRangeMultiplier: 1
+  towerFireRateMultiplier: 1
+  enemySpeedMultiplier: 1
+  enemyHealthMultiplier: 1.1
+  windForce: {x: 0, y: 0}
+  windVariance: 0.2
+  hasLampSystem: 0
+  hasBirdbathAttraction: 0
+  hasWindEffect: 0
+  hasTVBeacon: 0
+  hasFridgeBonus: 1
+  ambientLightColor: {r: 1, g: 1, b: 1, a: 1}
+  ambientLightIntensity: 1
+  backgroundSprite: {fileID: 0}

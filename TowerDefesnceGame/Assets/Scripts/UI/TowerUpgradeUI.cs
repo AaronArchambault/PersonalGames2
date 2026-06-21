@@ -55,8 +55,11 @@ public class TowerUpgradeUI : MonoBehaviour
         RefreshPath(0, selectedTower.pathALevel, pathANameText, pathACostText, pathAButton);
         RefreshPath(1, selectedTower.pathBLevel, pathBNameText, pathBCostText, pathBButton);
 
-        int sell = Mathf.RoundToInt(selectedTower.cost * 0.6f);
-        sellValueText.text = $"Sell  +{sell}g";
+      /*  int sell = Mathf.RoundToInt(selectedTower.cost * 0.6f);
+        sellValueText.text = $"Sell  +{sell}g";*/
+        // In TowerUpgradeUI.Refresh():
+int sell = selectedTower.GetSellValue();
+sellValueText.text = $"Sell +{sell}g  ({selectedTower.killCount} kills)";
     }
 
     void RefreshPath(int path, int level, TextMeshProUGUI nameText, TextMeshProUGUI costText, Button btn)
@@ -73,8 +76,29 @@ public class TowerUpgradeUI : MonoBehaviour
     public void OnClickUpgradeA() { if (selectedTower.TryUpgrade(0)) Refresh(); }
     public void OnClickUpgradeB() { if (selectedTower.TryUpgrade(1)) Refresh(); }
 
-    public void OnClickSell()
+
+public void OnClickSell()
+{
+    int refund = selectedTower.GetSellValue();
+    GameManager.Instance.EarnGold(refund);
+    FloatingTextPool.Instance?.Spawn(
+        selectedTower.transform.position + Vector3.up,
+        $"+{refund}g", Color.yellow);
+    Destroy(selectedTower.gameObject);
+    Hide();
+}
+
+}
+
+
+ /*   public void OnClickSell()
     {
+            public int GetSellValue()
+{
+    int baseValue = Mathf.RoundToInt(cost * 0.6f);
+    int killBonus = killCount * 2; // 2g per kill
+    return baseValue + killBonus;
+
         int refund = Mathf.RoundToInt(selectedTower.cost * 0.6f);
         GameManager.Instance.EarnGold(refund);
         FloatingTextPool.Instance?.Spawn(selectedTower.transform.position + Vector3.up,
@@ -82,4 +106,4 @@ public class TowerUpgradeUI : MonoBehaviour
         Destroy(selectedTower.gameObject);
         Hide();
     }
-}
+}*/

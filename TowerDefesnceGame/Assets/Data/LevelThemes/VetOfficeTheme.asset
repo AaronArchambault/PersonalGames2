@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238150f11ddd17f49b3d86b10e00a195, type: 3}
+  m_Name: VetOfficeTheme
+  m_EditorClassIdentifier: Assembly-CSharp::LevelTheme
+  themeType: 6
+  themeName: Vet Office
+  themeDescription: "Cats are terrified here \u2014 more expensive but more fierce!"
+  themeColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+  themeIcon: {fileID: 0}
+  towerCostMultiplier: 1.2
+  towerDamageMultiplier: 1.2
+  towerRangeMultiplier: 1
+  towerFireRateMultiplier: 1
+  enemySpeedMultiplier: 1
+  enemyHealthMultiplier: 0.9
+  windForce: {x: 0, y: 0}
+  windVariance: 0.2
+  hasLampSystem: 0
+  hasBirdbathAttraction: 0
+  hasWindEffect: 0
+  hasTVBeacon: 0
+  hasFridgeBonus: 0
+  ambientLightColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+  ambientLightIntensity: 1
+  backgroundSprite: {fileID: 0}

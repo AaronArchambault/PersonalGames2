@@ -6131,6 +6131,9 @@ MonoBehaviour:
   - tag: SmokeEffect
     prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
     initialSize: 15
+  - tag: TreasureMouse
+    prefab: {fileID: 2084172044364426272, guid: f87687cc5cc83d444a5ab11f172bc68f, type: 3}
+    initialSize: 3
 --- !u!114 &1554740983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6163,6 +6166,8 @@ MonoBehaviour:
   loadFromJSON: 1
   waves: []
   spawnPoint: {fileID: 1157170836}
+  treasureMouseTag: TreasureMouse
+  treasureMouseChance: 0.15
 --- !u!114 &1554740985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,6 +8067,10 @@ MonoBehaviour:
   victoryPanel: {fileID: 1646494255}
   gameOverWaveText: {fileID: 1898604509}
   announceText: {fileID: 1346559969}
+  themeDescriptionText: {fileID: 0}
+  themeDescriptionPanel: {fileID: 0}
+  windIndicatorArrow: {fileID: 0}
+  windStrengthText: {fileID: 0}
 --- !u!114 &2088309158
 MonoBehaviour:
   m_ObjectHideFlags: 0

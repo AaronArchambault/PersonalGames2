@@ -41,6 +41,11 @@ public class WaveManager : MonoBehaviour
     private int currentWaveIndex = 0;
     private int activeEnemyCount = 0;
 
+    [Header("Treasure Mouse")]
+public string treasureMouseTag   = "TreasureMouse";
+[Range(0f, 1f)]
+public float  treasureMouseChance = 0.15f;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -129,6 +134,12 @@ public class WaveManager : MonoBehaviour
 
         if (currentWaveIndex >= waves.Count)
             OnAllWavesComplete?.Invoke();
+
+          if (Random.value < treasureMouseChance)
+{
+    yield return new WaitForSeconds(Random.Range(2f, 5f));
+    ObjectPool.Instance.Spawn(treasureMouseTag, spawnPoint.position, Quaternion.identity);
+}  
     }
 
     void HandleEnemyDied()

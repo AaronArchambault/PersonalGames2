@@ -122,6 +122,10 @@ void OnDisable()
         if (!IsValidPlacement(pos)) return;
         if (!GameManager.Instance.SpendGold(selectedCost)) return;
 
+        // In TryPlace(), replace SpendGold line:
+int actualCost = Mathf.RoundToInt(selectedCost * LevelThemeManager.TowerCostMult);
+if (!GameManager.Instance.SpendGold(actualCost)) return;
+
         Instantiate(selectedPrefab, pos, Quaternion.identity);
 
         // Place sound
