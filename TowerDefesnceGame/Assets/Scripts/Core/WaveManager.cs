@@ -38,6 +38,8 @@ public class WaveManager : MonoBehaviour
     public event System.Action      OnWaveComplete;
     public event System.Action      OnAllWavesComplete;
 
+    public int CurrentWaveIndex => currentWaveIndex;
+
     private int currentWaveIndex = 0;
     private int activeEnemyCount = 0;
 
