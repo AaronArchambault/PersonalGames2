@@ -58,12 +58,14 @@ public class TowerIdleAnimator : MonoBehaviour
     {
         isSleeping = true;
         zzzParticles?.Play();
+        GetComponent<TowerAnimator>()?.SetSleeping(true);
     }
 
     void StopSleep()
     {
         isSleeping = false;
         zzzParticles?.Stop();
+        GetComponent<TowerAnimator>()?.SetSleeping(false);
     }
 
     void OnWaveComplete()

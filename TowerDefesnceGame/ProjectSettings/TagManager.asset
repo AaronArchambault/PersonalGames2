@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Path
   - Tower
+  - Lamp
+  - BirdBath
+  - TV
+  - Obstacle
   layers:
   - Default
   - TransparentFX

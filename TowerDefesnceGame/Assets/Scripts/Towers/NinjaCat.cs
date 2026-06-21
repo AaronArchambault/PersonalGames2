@@ -58,6 +58,7 @@ public class NinjaCat : Tower
         ObjectPool.Instance.Spawn(smokeEffectTag, transform.position, Quaternion.identity);
         if (catSprite) catSprite.enabled = false;
         isVisible = false;
+        GetComponent<TowerAnimator>()?.SetInvisible(true);
 
         yield return new WaitForSeconds(disappearTime);
 
@@ -78,6 +79,7 @@ public class NinjaCat : Tower
         yield return new WaitForSeconds(0.1f);
         if (catSprite) catSprite.enabled = true;
         isVisible = true;
+        GetComponent<TowerAnimator>()?.SetInvisible(false);
     }
 
     protected override void Shoot() { } // Ninja uses teleport system instead

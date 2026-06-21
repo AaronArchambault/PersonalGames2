@@ -43,7 +43,7 @@ public class PrinterCat : Tower
         FloatingTextPool.Instance?.Spawn(
             transform.position + Vector3.up, "PRINTER NOISE!!!", Color.red);
         CameraShake.Instance?.Shake(0.2f, 0.5f);
-
+        GetComponent<TowerAnimator>()?.PlayPanic();
         // Cat absolutely loses it — knock ALL nearby enemies flying backward
         yield return new WaitForSeconds(0.3f);
 

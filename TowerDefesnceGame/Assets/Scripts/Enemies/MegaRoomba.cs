@@ -56,6 +56,7 @@ public class MegaRoomba : Enemy
             UIManager.Instance?.Announce("MEGA ROOMBA: TURBO MODE!", Color.red);
             CameraShake.Instance?.Shake(0.4f, 0.6f);
             if (sr) sr.color = new Color(1f, 0.3f, 0.3f);
+            GetComponent<EnemyAnimator>()?.SetPhase2(true);
         }
     }
 

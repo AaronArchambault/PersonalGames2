@@ -41,6 +41,8 @@ public class WizardCat : Tower
             transform.position + Vector3.up * 0.8f,
             GetSpellName(spell), GetSpellColor(spell));
 
+            GetComponent<TowerAnimator>()?.PlayCast();
+
         yield return new WaitForSeconds(0.3f);
 
         switch (spell)

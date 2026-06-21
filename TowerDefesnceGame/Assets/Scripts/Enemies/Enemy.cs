@@ -106,6 +106,8 @@ public class Enemy : MonoBehaviour, IPoolable
  
         if (flashRoutine != null) StopCoroutine(flashRoutine);
         flashRoutine = StartCoroutine(FlashHit());
+
+        GetComponent<EnemyAnimator>()?.PlayHurt();
  
         FloatingTextPool.Instance?.Spawn(
             transform.position + Vector3.up * 0.4f,
@@ -113,6 +115,7 @@ public class Enemy : MonoBehaviour, IPoolable
             Color.white);
  
         GetComponent<EnemyHurtSounds>()?.PlayHurtSound();
+        
  
         if (currentHealth <= 0) Die();
     }
@@ -155,6 +158,7 @@ public class Enemy : MonoBehaviour, IPoolable
                 transform.position, Quaternion.identity);
  
         GetComponent<EnemyHurtSounds>()?.PlayDeathSound();
+        GetComponent<EnemyAnimator>()?.PlayDeath();
  
         OnDied?.Invoke();
         ObjectPool.Instance.Despawn(poolTag, gameObject);
