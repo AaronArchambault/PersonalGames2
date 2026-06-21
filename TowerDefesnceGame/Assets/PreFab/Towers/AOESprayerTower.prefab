@@ -376,6 +376,7 @@ MonoBehaviour:
   targetMode: 0
   turretPivot: {fileID: 8625744501181248073}
   rangeIndicator: {fileID: 5459191820448636668}
+  killCount: 0
   firePoint: {fileID: 2264914246487278495}
   bulletPoolTag: Bullet
   bulletsPerShot: 6
