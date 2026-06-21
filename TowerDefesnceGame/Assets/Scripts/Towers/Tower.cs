@@ -1,12 +1,11 @@
 
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using TMPro;
  
 public abstract class Tower : MonoBehaviour
 {
-    // Enum declared before any [Header] attributes
     public enum TargetMode { First, Last, Strongest, Closest }
  
     [Header("Base Stats")]
@@ -24,8 +23,18 @@ public abstract class Tower : MonoBehaviour
     public TargetMode targetMode = TargetMode.First;
  
     [Header("Visual")]
-    public Transform  turretPivot;
-    public GameObject rangeIndicator;
+    public Transform     turretPivot;
+    public GameObject    rangeIndicator;
+    public TextMeshPro   killCounterText;  // 3D TMP child above tower
+    public SpriteRenderer baseSpriteRenderer;
+ 
+    [Header("Personality Sounds")]
+    public string idleSound     = "";  // e.g. "purr", "grumble"
+    public float  idleSoundInterval = 8f;
+ 
+    [Header("Synergy")]
+    public float synergyBonusPercent = 0.1f;  // 10% bonus per adjacent same-type tower
+    public float synergyRadius       = 1.5f;
  
     [HideInInspector] public int killCount = 0;
  
@@ -35,20 +44,28 @@ public abstract class Tower : MonoBehaviour
     protected float Damage;
  
     protected Transform currentTarget;
-    private float fireCooldown = 0f;
-    private bool  isSelected   = false;
+    private float fireCooldown    = 0f;
+    private bool  isSelected      = false;
+    private float idleSoundTimer  = 0f;
+    private float synergyDamageBonus = 0f;
+    private float synergyRangeBonus  = 0f;
  
     // ── Lifecycle ─────────────────────────────────────────────
  
     protected virtual void Start()
     {
         RecalculateStats();
+        RecalculateSynergy();
         if (rangeIndicator) rangeIndicator.SetActive(false);
+        if (killCounterText) killCounterText.text = "";
+        idleSoundTimer = Random.Range(0f, idleSoundInterval);
     }
  
     protected virtual void Update()
     {
-        fireCooldown -= Time.deltaTime;
+        fireCooldown   -= Time.deltaTime;
+        idleSoundTimer -= Time.deltaTime;
+ 
         FindTarget();
         RotateToTarget();
  
@@ -56,6 +73,15 @@ public abstract class Tower : MonoBehaviour
         {
             Shoot();
             fireCooldown = 1f / FireRate;
+            StartCoroutine(PulseRangeRing());
+        }
+ 
+        // Personality idle sound
+        if (idleSoundTimer <= 0f && !string.IsNullOrEmpty(idleSound))
+        {
+            idleSoundTimer = idleSoundInterval + Random.Range(-2f, 2f);
+            if (currentTarget == null) // only when idle (no enemies)
+                AudioManager.Instance?.Play(idleSound);
         }
     }
  
@@ -99,15 +125,64 @@ public abstract class Tower : MonoBehaviour
  
     protected abstract void Shoot();
  
+    // ── Synergy ───────────────────────────────────────────────
+ 
+    public void RecalculateSynergy()
+    {
+        Collider2D[] nearby = Physics2D.OverlapCircleAll(
+            transform.position, synergyRadius, LayerMask.GetMask("Tower"));
+ 
+        int sameTypeCount = 0;
+        foreach (var col in nearby)
+        {
+            if (col.gameObject == gameObject) continue;
+            if (col.GetComponent(GetType()) != null) sameTypeCount++;
+        }
+ 
+        synergyDamageBonus = baseDamage * synergyBonusPercent * sameTypeCount;
+        synergyRangeBonus  = baseRange  * synergyBonusPercent * sameTypeCount * 0.5f;
+ 
+        if (sameTypeCount > 0)
+            FloatingTextPool.Instance?.Spawn(
+                transform.position + Vector3.up * 0.8f,
+                $"SYNERGY x{sameTypeCount}!", Color.cyan);
+    }
+ 
     // ── Selection ─────────────────────────────────────────────
-    // NOTE: OnMouseDown is intentionally removed.
-    // Tower selection is handled entirely by TowerPlacer.OnClick()
-    // which correctly checks for UI hits before selecting towers.
  
     public void SetSelected(bool selected)
     {
         isSelected = selected;
         if (rangeIndicator) rangeIndicator.SetActive(selected);
+    }
+ 
+    public void CycleTargetMode()
+    {
+        int next    = ((int)targetMode + 1) % 4;
+        targetMode  = (TargetMode)next;
+    }
+ 
+    // ── Range Ring Pulse ──────────────────────────────────────
+ 
+    IEnumerator PulseRangeRing()
+    {
+        if (rangeIndicator == null || !isSelected) yield break;
+        var ringsr = rangeIndicator.GetComponent<SpriteRenderer>();
+        if (ringsr == null) yield break;
+        Color orig = ringsr.color;
+        ringsr.color = new Color(1f, 1f, 0f, 0.5f);
+        yield return new WaitForSeconds(0.08f);
+        ringsr.color = orig;
+    }
+ 
+    // ── Kill Count ────────────────────────────────────────────
+ 
+    public void RegisterKill()
+    {
+        killCount++;
+        if (killCounterText)
+            killCounterText.text = killCount.ToString();
+        MetagameManager.Instance?.AddKill(GetType().Name);
     }
  
     // ── Stats ─────────────────────────────────────────────────
@@ -118,7 +193,6 @@ public abstract class Tower : MonoBehaviour
         FireRate = baseFireRate;
         Damage   = baseDamage;
  
-        // Path A upgrades
         if (upgradeData != null)
         {
             for (int i = 0; i < pathALevel && i < 3; i++)
@@ -127,7 +201,6 @@ public abstract class Tower : MonoBehaviour
                 Range    += upgradeData.pathA[i].rangeBonus;
                 FireRate += upgradeData.pathA[i].fireRateBonus;
             }
-            // Path B upgrades
             for (int i = 0; i < pathBLevel && i < 3; i++)
             {
                 Damage   += upgradeData.pathB[i].damageBonus;
@@ -136,7 +209,11 @@ public abstract class Tower : MonoBehaviour
             }
         }
  
-        // Mother cat boost (applied by MotherCatTower)
+        // Synergy bonus
+        Damage += synergyDamageBonus;
+        Range  += synergyRangeBonus;
+ 
+        // Mother cat boost
         var motherBoost = GetComponent<MotherCatBoost>();
         if (motherBoost != null)
         {
@@ -144,17 +221,23 @@ public abstract class Tower : MonoBehaviour
             Damage   += motherBoost.damageBonus;
         }
  
+        // Relic system bonus
+        if (RelicSystem.Instance != null)
+        {
+            Damage += RelicSystem.Instance.TotalDamageBonus;
+            Range  += RelicSystem.Instance.TotalRangeBonus;
+        }
+ 
         // Level theme multipliers
         Range    *= LevelThemeManager.TowerRangeMult;
         FireRate *= LevelThemeManager.TowerFireRateMult;
         Damage   *= LevelThemeManager.TowerDamageMult;
  
-        // Basement lamp range reduction
+        // Basement lamp
         var lampStatus = GetComponent<BasementLampStatus>();
         if (lampStatus != null && !lampStatus.nearLamp)
             Range *= 0.5f;
  
-        // Update range indicator circle size
         if (rangeIndicator)
             rangeIndicator.transform.localScale = Vector3.one * Range * 2f;
     }
@@ -173,11 +256,10 @@ public abstract class Tower : MonoBehaviour
  
         if (!GameManager.Instance.SpendGold(upgradeCost)) return false;
  
-        if (path == 0) pathALevel++;
-        else           pathBLevel++;
- 
+        if (path == 0) pathALevel++; else pathBLevel++;
         RecalculateStats();
         StartCoroutine(UpgradePopAnim());
+        GetComponent<TowerAnimator>()?.PlayAttack();
         return true;
     }
  
@@ -193,17 +275,12 @@ public abstract class Tower : MonoBehaviour
  
     public int GetSellValue()
     {
-        int baseValue = Mathf.RoundToInt(cost * 0.6f);
-        int killBonus = killCount * 2;
-        return baseValue + killBonus;
+        return Mathf.RoundToInt(cost * 0.6f) + killCount * 2;
     }
  
     // ── Power-Up Support ──────────────────────────────────────
  
-    public void ResetFireCooldown()
-    {
-        fireCooldown = 0f;
-    }
+    public void ResetFireCooldown() => fireCooldown = 0f;
  
     public void ApplyFireRateBoost(float multiplier, float duration)
     {
@@ -226,20 +303,16 @@ public abstract class Tower : MonoBehaviour
         while (t < 0.1f)
         {
             transform.localScale = Vector3.Lerp(orig, orig * 1.3f, t / 0.1f);
-            t += Time.deltaTime;
-            yield return null;
+            t += Time.deltaTime; yield return null;
         }
         t = 0f;
         while (t < 0.1f)
         {
             transform.localScale = Vector3.Lerp(orig * 1.3f, orig, t / 0.1f);
-            t += Time.deltaTime;
-            yield return null;
+            t += Time.deltaTime; yield return null;
         }
         transform.localScale = orig;
     }
- 
-    // ── Gizmos ────────────────────────────────────────────────
  
     void OnDrawGizmosSelected()
     {
