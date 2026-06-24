@@ -86,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7933474846516340325, guid: 9d299021930c55f47b3fc84144646795, type: 3}
-  m_Color: {r: 0.0062898775, g: 0.735849, b: 0, a: 1}
+  m_Sprite: {fileID: 1302723820812287101, guid: df733ab83f124d243a3c99488a25217b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -176,7 +176,13 @@ MonoBehaviour:
   reward: 10
   liveDamage: 1
   deathParticlePrefab: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1180563353653928025}
+  canBeElite: 1
+  eliteChance: 0.1
+  eliteHealthMult: 2
+  eliteSpeedMult: 1.3
+  eliteRewardMult: 3
+  eliteColor: {r: 1, g: 0.8, b: 0, a: 1}
 --- !u!114 &6685790260450773702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +201,12 @@ MonoBehaviour:
   liveDamage: 1
   deathParticlePrefab: {fileID: 0}
   healthBar: {fileID: 0}
+  canBeElite: 1
+  eliteChance: 0.1
+  eliteHealthMult: 2
+  eliteSpeedMult: 1.3
+  eliteRewardMult: 3
+  eliteColor: {r: 1, g: 0.8, b: 0, a: 1}
   goldStealAmount: 10
   stealRadius: 1.5
 --- !u!1 &2544973498961968911
@@ -224,7 +236,7 @@ Transform:
   m_GameObject: {fileID: 2544973498961968911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.547, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
