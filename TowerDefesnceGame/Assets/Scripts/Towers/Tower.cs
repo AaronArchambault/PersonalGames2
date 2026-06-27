@@ -232,6 +232,9 @@ public abstract class Tower : MonoBehaviour
         Range    *= LevelThemeManager.TowerRangeMult;
         FireRate *= LevelThemeManager.TowerFireRateMult;
         Damage   *= LevelThemeManager.TowerDamageMult;
+        Damage   *= (WeatherSystem.Instance?.TowerDamageModifier   ?? 1f);
+        FireRate *= (WeatherSystem.Instance?.TowerFireRateModifier ?? 1f);
+
  
         // Basement lamp
         var lampStatus = GetComponent<BasementLampStatus>();

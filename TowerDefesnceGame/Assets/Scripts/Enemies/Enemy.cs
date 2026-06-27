@@ -136,8 +136,12 @@ public class Enemy : MonoBehaviour, IPoolable
         if (waypointIndex >= waypoints.Length) { Leak(); return; }
  
         Transform target = waypoints[waypointIndex];
-        float effectiveSpeed = currentSpeed * slowMultiplier
-                             * LevelThemeManager.EnemySpeedMult;
+      /*  float effectiveSpeed = currentSpeed * slowMultiplier
+                             * LevelThemeManager.EnemySpeedMult;*/
+                float effectiveSpeed = currentSpeed * slowMultiplier
+    * LevelThemeManager.EnemySpeedMult
+    * (WeatherSystem.Instance?.EnemySpeedModifier ?? 1f);
+             
         transform.position = Vector2.MoveTowards(
             transform.position, target.position, effectiveSpeed * Time.deltaTime);
  
