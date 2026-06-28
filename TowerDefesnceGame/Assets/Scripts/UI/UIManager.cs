@@ -116,6 +116,10 @@ public class UIManager : MonoBehaviour
         if (gameOverPanel) gameOverPanel.SetActive(true);
         if (gameOverWaveText && GameManager.Instance != null)
             gameOverWaveText.text = $"You survived {GameManager.Instance.Wave} wave(s)";
+           
+            int stars = StarRatingSystem.Instance?.GetLevelStars(
+    UnityEngine.SceneManagement.SceneManager.GetActiveScene().name) ?? 1;
+
     }
  
     public void OnStartWaveButton() { WaveManager.Instance?.StartNextWave(); }

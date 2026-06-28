@@ -34,6 +34,19 @@ public class TowerUpgradeUI : MonoBehaviour
  
     private Tower selectedTower;
     private bool  isOpen = false;
+
+    [Header("Targeting")]
+public TextMeshProUGUI targetModeText;
+public Button          targetModeButton;
+
+public void OnClickCycleTarget()
+{
+    if (selectedTower == null) return;
+    selectedTower.CycleTargetMode();
+    if (targetModeText)
+        targetModeText.text = $"Target: {selectedTower.targetMode}";
+}
+
  
     void Awake()
     {
@@ -128,6 +141,11 @@ public class TowerUpgradeUI : MonoBehaviour
             sellValueText.text = $"Sell  +{sellVal}g";
         }
         if (sellButton) sellButton.interactable = true;
+
+
+        if (targetModeText && selectedTower != null)
+    targetModeText.text = $"Target: {selectedTower.targetMode}";
+
     }
  
     void RefreshPath(int path, int level,
