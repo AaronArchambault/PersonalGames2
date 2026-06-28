@@ -373,12 +373,18 @@ MonoBehaviour:
   baseFireRate: 1.2
   baseDamage: 25
   cost: 100
-  upgradeData: {fileID: 11400000, guid: 0568c42e7857c8e4ba34103feac0586e, type: 2}
+  upgradeData: {fileID: 11400000, guid: 9f56a148f2dcd654c9438d5ca2ab3d74, type: 2}
   pathALevel: 0
   pathBLevel: 0
   targetMode: 0
   turretPivot: {fileID: 8625744501181248073}
   rangeIndicator: {fileID: 5459191820448636668}
+  killCounterText: {fileID: 0}
+  baseSpriteRenderer: {fileID: 0}
+  idleSound: 
+  idleSoundInterval: 8
+  synergyBonusPercent: 0.1
+  synergyRadius: 1.5
   killCount: 0
   firePoint: {fileID: 2264914246487278495}
   bulletPoolTag: Bullet
@@ -424,6 +430,12 @@ MonoBehaviour:
   targetMode: 0
   turretPivot: {fileID: 8625744501181248073}
   rangeIndicator: {fileID: 5459191820448636668}
+  killCounterText: {fileID: 0}
+  baseSpriteRenderer: {fileID: 0}
+  idleSound: 
+  idleSoundInterval: 8
+  synergyBonusPercent: 0.1
+  synergyRadius: 1.5
   killCount: 0
   teleportDamage: 200
   teleportCooldown: 3

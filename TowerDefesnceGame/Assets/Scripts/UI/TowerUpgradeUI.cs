@@ -95,6 +95,7 @@ public void OnClickCycleTarget()
         selectedTower = tower;
         isOpen        = true;
         panel.SetActive(true);
+        CatProfileCard.Instance?.ShowCard(tower.GetType().Name);
         Refresh();
     }
  
@@ -106,6 +107,8 @@ public void OnClickCycleTarget()
         selectedTower = null;
         isOpen        = false;
  
+        CatProfileCard.Instance?.HideCard();
+
         if (panel) panel.SetActive(false);
     }
  

@@ -464,7 +464,7 @@ MonoBehaviour:
   baseFireRate: 1.2
   baseDamage: 25
   cost: 100
-  upgradeData: {fileID: 11400000, guid: 0568c42e7857c8e4ba34103feac0586e, type: 2}
+  upgradeData: {fileID: 11400000, guid: cf1f9ae002add974d9e6a72d64b9444b, type: 2}
   pathALevel: 0
   pathBLevel: 0
   targetMode: 0
