@@ -1,3 +1,5 @@
+// Scripts/Saving/LevelEditor.cs
+
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.IO;
@@ -10,11 +12,13 @@ public class LevelEditor : MonoBehaviour
     public GameObject editorUI;
 
     private bool editorActive = false;
-    private bool erasing = false;
+    private bool erasing      = false;
 
-    void Start() { if (editorUI) editorUI.SetActive(false); }
+    void Start()
+    {
+        if (editorUI) editorUI.SetActive(false);
+    }
 
-    // Toggle via UI button or key
     public void ToggleEditor()
     {
         editorActive = !editorActive;
@@ -25,7 +29,6 @@ public class LevelEditor : MonoBehaviour
     {
         if (!editorActive) return;
 
-        // Hold shift to erase
         erasing = UnityEngine.InputSystem.Keyboard.current.leftShiftKey.isPressed;
 
         if (UnityEngine.InputSystem.Mouse.current.leftButton.isPressed)
@@ -42,7 +45,9 @@ public class LevelEditor : MonoBehaviour
 
     public void SaveLevel(string fileName = "level.json")
     {
-        var data = new LevelData();
+        // SavedLevelData replaces the old LevelData name
+        // (LevelData is now used by LevelSelectManager)
+        var data = new SavedLevelData();
         foreach (var pos in tilemap.cellBounds.allPositionsWithin)
         {
             if (!tilemap.HasTile(pos)) continue;
@@ -58,7 +63,7 @@ public class LevelEditor : MonoBehaviour
     {
         string path = Path.Combine(Application.persistentDataPath, fileName);
         if (!File.Exists(path)) { Debug.LogWarning("No level file."); return; }
-        var data = JsonUtility.FromJson<LevelData>(File.ReadAllText(path));
+        var data = JsonUtility.FromJson<SavedLevelData>(File.ReadAllText(path));
         tilemap.ClearAllTiles();
         foreach (var t in data.tiles)
             tilemap.SetTile(new Vector3Int(t.x, t.y, 0), t.isPath ? pathTile : groundTile);

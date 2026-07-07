@@ -24,6 +24,9 @@ MonoBehaviour:
     m_path: Assets/Scenes/MainMenu.unity
     m_guid: 7e94c51a56dc0584187c19744a8e7723
   - m_enabled: 1
+    m_path: Assets/Scenes/LevelSelect.unity
+    m_guid: 525ebfdb022db394d950770eec614c9d
+  - m_enabled: 1
     m_path: Assets/Scenes/SampleScene.unity
     m_guid: 8c9cfa26abfee488c85f1582747f6a02
   m_HasScriptingDefines: 0

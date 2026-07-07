@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour
     public bool GameOver { get; private set; }
  
     [Header("Wave Tracking")]
-    public int  GoldEarnedThisWave  { get; private set; }
-    public int  LivesLostThisWave   { get; private set; }
-    public bool PerfectRun          { get; private set; } // no lives lost ever
+    public int  GoldEarnedThisWave { get; private set; }
+    public int  LivesLostThisWave  { get; private set; }
+    public bool PerfectRun         { get; private set; }
  
     [Header("Screen Flash")]
     public float flashDuration = 0.12f;
@@ -40,15 +40,19 @@ public class GameManager : MonoBehaviour
  
     void Start()
     {
+        // Read starting gold from level select if available
+        int levelGold = PlayerPrefs.GetInt("current_starting_gold", startingGold);
         Lives              = startingLives;
-        Gold               = startingGold;
+        Gold               = levelGold;
         Wave               = 0;
         GameOver           = false;
         GoldEarnedThisWave = 0;
         LivesLostThisWave  = 0;
         PerfectRun         = true;
  
-        // Subscribe to wave events to reset per-wave counters
+        OnGoldChanged?.Invoke(Gold);
+        OnLivesChanged?.Invoke(Lives);
+ 
         if (WaveManager.Instance != null)
         {
             WaveManager.Instance.OnWaveStart    += _ => ResetWaveCounters();
@@ -74,6 +78,12 @@ public class GameManager : MonoBehaviour
         OnGoldEarnedThisWaveChanged?.Invoke(GoldEarnedThisWave);
     }
  
+    public void SetStartingGold(int amount)
+    {
+        Gold = amount;
+        OnGoldChanged?.Invoke(Gold);
+    }
+ 
     // ── Lives ─────────────────────────────────────────────────
  
     public void LoseLife(int amount = 1)
@@ -83,11 +93,9 @@ public class GameManager : MonoBehaviour
         PerfectRun        = false;
         OnLivesChanged?.Invoke(Lives);
  
-        // Screen flash red
         if (AccessibilitySettings.ScreenFlash)
             StartCoroutine(ScreenFlash(new Color(1f, 0f, 0f, 0.35f), flashDuration));
  
-        // Scale shake with damage
         CameraShake.Instance?.Shake(0.08f * amount, 0.3f);
  
         if (Lives <= 0) TriggerGameOver();
@@ -119,7 +127,6 @@ public class GameManager : MonoBehaviour
     public IEnumerator ScreenFlash(Color color, float duration)
     {
         if (BrightnessOverlay.Instance == null) yield break;
-        // We use ColorFlash rather than brightness for colored flashes
         var overlay = BrightnessOverlay.Instance;
         overlay.SetColor(color);
         float t = 0;
@@ -149,7 +156,6 @@ public class GameManager : MonoBehaviour
  
     void OnWaveCompleted()
     {
-        // Star rating for this wave
         int stars = LivesLostThisWave == 0 ? 3
                   : LivesLostThisWave <= 2 ? 2
                   : 1;
@@ -162,7 +168,6 @@ public class GameManager : MonoBehaviour
     void TriggerGameOver()
     {
         GameOver = true;
-        // Save star rating / metagame progress before freeze
         StarRatingSystem.Instance?.SaveRatings();
         MetagameManager.Instance?.SaveProgress();
         StartCoroutine(GameOverSequence());
@@ -170,7 +175,6 @@ public class GameManager : MonoBehaviour
  
     IEnumerator GameOverSequence()
     {
-        // Brief dramatic pause before game over screen
         Time.timeScale = 0.3f;
         yield return new WaitForSecondsRealtime(0.5f);
         Time.timeScale = 0f;
