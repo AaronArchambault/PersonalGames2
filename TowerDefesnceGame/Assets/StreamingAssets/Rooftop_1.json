@@ -1,0 +1,15 @@
+{
+  "startingGold": 180,
+  "startingLives": 20,
+  "themeName": "Rooftop",
+  "waves": [
+    { "waveName": "Wave 1 - Light Breeze", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 2 - Birds Eye View", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 3, "spawnInterval": 1.5 }, { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.7 }]},
+    { "waveName": "Wave 3 - Gust", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "SeagullEnemy", "count": 5, "spawnInterval": 0.9 }, { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 4 - Drone Strike", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "DroneEnemy", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "ArmouredRat", "count": 3, "spawnInterval": 1.5 }]},
+    { "waveName": "Wave 5 - Wind Surge", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RCCarEnemy", "count": 5, "spawnInterval": 1.0 }, { "poolTag": "SeagullEnemy", "count": 5, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 6 - RC Rush", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RCCarEnemy", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "DroneEnemy", "count": 4, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 7 - Storm Brewing", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 }, { "poolTag": "DroneEnemy", "count": 5, "spawnInterval": 1.0 }, { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 8 - Full Gale", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 6, "spawnInterval": 0.8 }, { "poolTag": "RCCarEnemy", "count": 6, "spawnInterval": 0.8 }, { "poolTag": "SeagullEnemy", "count": 6, "spawnInterval": 0.7 }, { "poolTag": "RobotRatEnemy", "count": 2, "spawnInterval": 3.0 }]}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "startingGold": 175,
+  "startingLives": 20,
+  "themeName": "Garden",
+  "waves": [
+    { "waveName": "Wave 1", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "PigeonHorde", "count": 10, "spawnInterval": 0.25 }, { "poolTag": "ScoutMouse", "count": 5, "spawnInterval": 0.7 }]},
+    { "waveName": "Wave 2", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "CrowEnemy", "count": 5, "spawnInterval": 0.9 }, { "poolTag": "SeagullEnemy", "count": 4, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 3", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "PigeonHorde", "count": 8, "spawnInterval": 0.25 }]},
+    { "waveName": "Wave 4", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "CrowEnemy", "count": 6, "spawnInterval": 0.8 }, { "poolTag": "NinjaMouse", "count": 4, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 5 - Owl Strikes", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 1, "spawnInterval": 5.0 }, { "poolTag": "PigeonHorde", "count": 12, "spawnInterval": 0.2 }]},
+    { "waveName": "Wave 6", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "SeagullEnemy", "count": 7, "spawnInterval": 0.7 }, { "poolTag": "CrowEnemy", "count": 5, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 7", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ParrotEnemy", "count": 4, "spawnInterval": 1.2 }, { "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.1 }, { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 8 - Owl Returns", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 1, "spawnInterval": 5.0 }, { "poolTag": "SeagullEnemy", "count": 7, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 9", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "CrowEnemy", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "ParrotEnemy", "count": 5, "spawnInterval": 1.0 }, { "poolTag": "PigeonHorde", "count": 12, "spawnInterval": 0.2 }]},
+    { "waveName": "Wave 10 - Full Sky", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "SeagullEnemy", "count": 8, "spawnInterval": 0.5 }, { "poolTag": "CrowEnemy", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "OwlBoss", "count": 1, "spawnInterval": 5.0 }, { "poolTag": "PigeonHorde", "count": 10, "spawnInterval": 0.2 }]}
+  ]
+}

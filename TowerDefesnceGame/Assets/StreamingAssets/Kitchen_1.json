@@ -1,0 +1,41 @@
+{
+  "startingGold": 200,
+  "startingLives": 20,
+  "themeName": "Kitchen",
+  "waves": [
+    { "waveName": "Wave 1 - Crumbs", "prewaveDelay": 1.0, "enemies": [
+      { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.9 }
+    ]},
+    { "waveName": "Wave 2 - Cupboard Raiders", "prewaveDelay": 1.0, "enemies": [
+      { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.7 },
+      { "poolTag": "CrowEnemy", "count": 2, "spawnInterval": 1.5 }
+    ]},
+    { "waveName": "Wave 3 - Cheese Run", "prewaveDelay": 1.5, "enemies": [
+      { "poolTag": "CheeseBomber", "count": 3, "spawnInterval": 2.0 },
+      { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.6 }
+    ]},
+    { "waveName": "Wave 4 - Heavy Hitters", "prewaveDelay": 1.5, "enemies": [
+      { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.5 },
+      { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.5 }
+    ]},
+    { "waveName": "Wave 5 - Fridge Rush", "prewaveDelay": 1.5, "enemies": [
+      { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.5 },
+      { "poolTag": "CrowEnemy", "count": 4, "spawnInterval": 0.9 }
+    ]},
+    { "waveName": "Wave 6 - Stealthy Bunch", "prewaveDelay": 2.0, "enemies": [
+      { "poolTag": "NinjaMouse", "count": 4, "spawnInterval": 1.5 },
+      { "poolTag": "ArmouredRat", "count": 3, "spawnInterval": 1.5 }
+    ]},
+    { "waveName": "Wave 7 - All Hands", "prewaveDelay": 2.0, "enemies": [
+      { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 },
+      { "poolTag": "CheeseBomber", "count": 3, "spawnInterval": 1.8 },
+      { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.2 }
+    ]},
+    { "waveName": "Wave 8 - Kitchen Closed", "prewaveDelay": 2.0, "enemies": [
+      { "poolTag": "ArmouredRat", "count": 6, "spawnInterval": 1.0 },
+      { "poolTag": "NinjaMouse", "count": 4, "spawnInterval": 1.2 },
+      { "poolTag": "CheeseBomber", "count": 4, "spawnInterval": 1.5 },
+      { "poolTag": "CrowEnemy", "count": 4, "spawnInterval": 0.8 }
+    ]}
+  ]
+}

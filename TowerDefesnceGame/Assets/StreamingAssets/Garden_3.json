@@ -1,0 +1,19 @@
+{
+  "startingGold": 150,
+  "startingLives": 15,
+  "themeName": "Garden",
+  "waves": [
+    { "waveName": "Wave 1", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "PigeonHorde", "count": 12, "spawnInterval": 0.2 }, { "poolTag": "CrowEnemy", "count": 4, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 2", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "SeagullEnemy", "count": 6, "spawnInterval": 0.7 }, { "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.1 }]},
+    { "waveName": "Wave 3", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "OwlBoss", "count": 1, "spawnInterval": 4.0 }, { "poolTag": "PigeonHorde", "count": 14, "spawnInterval": 0.18 }]},
+    { "waveName": "Wave 4", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "CrowEnemy", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "NinjaMouse", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 5", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ParrotEnemy", "count": 6, "spawnInterval": 1.0 }, { "poolTag": "SeagullEnemy", "count": 7, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 6", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 7, "spawnInterval": 0.9 }, { "poolTag": "CheeseBomber", "count": 4, "spawnInterval": 1.3 }, { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 }]},
+    { "waveName": "Wave 7 - Twin Owls", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 2, "spawnInterval": 5.0 }, { "poolTag": "PigeonHorde", "count": 16, "spawnInterval": 0.15 }]},
+    { "waveName": "Wave 8", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 5, "spawnInterval": 1.0 }, { "poolTag": "CrowEnemy", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 9", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "SeagullEnemy", "count": 8, "spawnInterval": 0.5 }, { "poolTag": "ParrotEnemy", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "ArmouredRat", "count": 6, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 10", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 15, "spawnInterval": 0.3 }, { "poolTag": "CrowEnemy", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 11", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 2, "spawnInterval": 4.0 }, { "poolTag": "DroneEnemy", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "SeagullEnemy", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 12 - MEGA ROOMBA", "prewaveDelay": 3.0, "enemies": [{ "poolTag": "PigeonHorde", "count": 20, "spawnInterval": 0.15 }, { "poolTag": "MegaRoomba", "count": 1, "spawnInterval": 6.0 }]}
+  ]
+}

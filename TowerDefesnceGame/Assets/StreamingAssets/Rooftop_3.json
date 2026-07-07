@@ -1,0 +1,19 @@
+{
+  "startingGold": 140,
+  "startingLives": 15,
+  "themeName": "Rooftop",
+  "waves": [
+    { "waveName": "Wave 1", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "RCCarEnemy", "count": 5, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 2", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 4, "spawnInterval": 1.5 }, { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 }]},
+    { "waveName": "Wave 3", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "SeagullEnemy", "count": 7, "spawnInterval": 0.6 }, { "poolTag": "DroneEnemy", "count": 6, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 4", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RoombaEnemy", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "ArmouredRat", "count": 6, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 5", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RCCarEnemy", "count": 9, "spawnInterval": 0.6 }, { "poolTag": "RobotRatEnemy", "count": 5, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 6", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "SeagullEnemy", "count": 7, "spawnInterval": 0.6 }, { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.35 }]},
+    { "waveName": "Wave 7", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 6, "spawnInterval": 1.2 }, { "poolTag": "RoombaEnemy", "count": 6, "spawnInterval": 1.1 }]},
+    { "waveName": "Wave 8", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "RCCarEnemy", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "DroneEnemy", "count": 6, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 9", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 7, "spawnInterval": 1.0 }, { "poolTag": "RoombaEnemy", "count": 6, "spawnInterval": 1.0 }, { "poolTag": "SeagullEnemy", "count": 7, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 10", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 16, "spawnInterval": 0.25 }, { "poolTag": "DroneEnemy", "count": 8, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 11", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 8, "spawnInterval": 0.9 }, { "poolTag": "RCCarEnemy", "count": 9, "spawnInterval": 0.55 }, { "poolTag": "ArmouredRat", "count": 7, "spawnInterval": 0.7 }]},
+    { "waveName": "Wave 12 - MEGA ROOMBA", "prewaveDelay": 3.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 10, "spawnInterval": 0.5 }, { "poolTag": "MegaRoomba", "count": 1, "spawnInterval": 5.0 }, { "poolTag": "RobotRatEnemy", "count": 5, "spawnInterval": 1.2 }]}
+  ]
+}

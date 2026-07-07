@@ -1,0 +1,19 @@
+{
+  "startingGold": 140,
+  "startingLives": 15,
+  "themeName": "Basement",
+  "waves": [
+    { "waveName": "Wave 1", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "NinjaMouse", "count": 5, "spawnInterval": 1.0 }, { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 2", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "RoombaEnemy", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "RobotRatEnemy", "count": 4, "spawnInterval": 1.4 }]},
+    { "waveName": "Wave 3", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "ArmouredRat", "count": 7, "spawnInterval": 0.9 }, { "poolTag": "NinjaMouse", "count": 6, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 4", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "ScoutMouse", "count": 14, "spawnInterval": 0.3 }, { "poolTag": "RobotRatEnemy", "count": 5, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 5", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RoombaEnemy", "count": 6, "spawnInterval": 1.0 }, { "poolTag": "ArmouredRat", "count": 7, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 6 - Triple EMP", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 7, "spawnInterval": 1.0 }, { "poolTag": "NinjaMouse", "count": 7, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 7", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 15, "spawnInterval": 0.28 }, { "poolTag": "RoombaEnemy", "count": 6, "spawnInterval": 1.0 }, { "poolTag": "ArmouredRat", "count": 6, "spawnInterval": 0.8 }]},
+    { "waveName": "Wave 8 - Lamp Flicker", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "NinjaMouse", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "RobotRatEnemy", "count": 7, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 9", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "RoombaEnemy", "count": 7, "spawnInterval": 1.0 }, { "poolTag": "ScoutMouse", "count": 12, "spawnInterval": 0.3 }]},
+    { "waveName": "Wave 10", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 8, "spawnInterval": 0.8 }, { "poolTag": "NinjaMouse", "count": 8, "spawnInterval": 0.7 }]},
+    { "waveName": "Wave 11", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 16, "spawnInterval": 0.25 }, { "poolTag": "ArmouredRat", "count": 9, "spawnInterval": 0.7 }, { "poolTag": "RoombaEnemy", "count": 7, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 12 - MEGA ROOMBA", "prewaveDelay": 3.0, "enemies": [{ "poolTag": "NinjaMouse", "count": 10, "spawnInterval": 0.5 }, { "poolTag": "MegaRoomba", "count": 1, "spawnInterval": 5.0 }, { "poolTag": "RobotRatEnemy", "count": 6, "spawnInterval": 1.0 }]}
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "startingGold": 200,
+  "startingLives": 20,
+  "themeName": "LivingRoom",
+  "waves": [
+    {
+      "waveName": "Wave 1 - They're Here",
+      "prewaveDelay": 1.0,
+      "enemies": [
+        { "poolTag": "ScoutMouse", "count": 5, "spawnInterval": 1.0 }
+      ]
+    },
+    {
+      "waveName": "Wave 2 - More Friends",
+      "prewaveDelay": 1.0,
+      "enemies": [
+        { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.8 }
+      ]
+    },
+    {
+      "waveName": "Wave 3 - TV Alert",
+      "prewaveDelay": 1.5,
+      "enemies": [
+        { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.7 },
+        { "poolTag": "PigeonHorde", "count": 4, "spawnInterval": 0.4 }
+      ]
+    },
+    {
+      "waveName": "Wave 4 - Armoured Arrival",
+      "prewaveDelay": 1.5,
+      "enemies": [
+        { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.6 },
+        { "poolTag": "ArmouredRat", "count": 2, "spawnInterval": 2.0 }
+      ]
+    },
+    {
+      "waveName": "Wave 5 - Rush Hour",
+      "prewaveDelay": 1.5,
+      "enemies": [
+        { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.5 },
+        { "poolTag": "PigeonHorde", "count": 6, "spawnInterval": 0.3 }
+      ]
+    },
+    {
+      "waveName": "Wave 6 - Cheese Party",
+      "prewaveDelay": 2.0,
+      "enemies": [
+        { "poolTag": "CheeseBomber", "count": 3, "spawnInterval": 2.0 },
+        { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.6 }
+      ]
+    },
+    {
+      "waveName": "Wave 7 - Almost There",
+      "prewaveDelay": 1.5,
+      "enemies": [
+        { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.5 },
+        { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.5 },
+        { "poolTag": "PigeonHorde", "count": 6, "spawnInterval": 0.3 }
+      ]
+    },
+    {
+      "waveName": "Wave 8 - The Rat Pack",
+      "prewaveDelay": 2.0,
+      "enemies": [
+        { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 },
+        { "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.2 },
+        { "poolTag": "CheeseBomber", "count": 3, "spawnInterval": 1.8 }
+      ]
+    }
+  ]
+}

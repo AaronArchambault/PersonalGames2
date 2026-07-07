@@ -1,0 +1,17 @@
+{
+  "startingGold": 160,
+  "startingLives": 20,
+  "themeName": "Rooftop",
+  "waves": [
+    { "waveName": "Wave 1", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 4, "spawnInterval": 1.2 }, { "poolTag": "ScoutMouse", "count": 7, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 2", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "RCCarEnemy", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "SeagullEnemy", "count": 4, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 3", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 3, "spawnInterval": 2.0 }, { "poolTag": "DroneEnemy", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 4", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "ScoutMouse", "count": 12, "spawnInterval": 0.4 }, { "poolTag": "RCCarEnemy", "count": 5, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 5", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.1 }, { "poolTag": "DroneEnemy", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 6 - EMP Storm", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 5, "spawnInterval": 1.5 }, { "poolTag": "RoombaEnemy", "count": 4, "spawnInterval": 1.5 }]},
+    { "waveName": "Wave 7", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "DroneEnemy", "count": 7, "spawnInterval": 0.8 }, { "poolTag": "RCCarEnemy", "count": 7, "spawnInterval": 0.8 }, { "poolTag": "SeagullEnemy", "count": 5, "spawnInterval": 0.7 }]},
+    { "waveName": "Wave 8", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.35 }, { "poolTag": "RobotRatEnemy", "count": 5, "spawnInterval": 1.3 }]},
+    { "waveName": "Wave 9", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RoombaEnemy", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "ArmouredRat", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "DroneEnemy", "count": 6, "spawnInterval": 0.9 }]},
+    { "waveName": "Wave 10 - Final Storm", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RCCarEnemy", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "DroneEnemy", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "RobotRatEnemy", "count": 4, "spawnInterval": 1.5 }, { "poolTag": "RoombaEnemy", "count": 4, "spawnInterval": 1.2 }]}
+  ]
+}

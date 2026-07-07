@@ -1,0 +1,17 @@
+{
+  "startingGold": 150,
+  "startingLives": 20,
+  "themeName": "VetOffice",
+  "waves": [
+    { "waveName": "Wave 1", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.3 }]},
+    { "waveName": "Wave 2", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ParrotEnemy", "count": 4, "spawnInterval": 1.2 }, { "poolTag": "NinjaMouse", "count": 4, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 3", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RoombaEnemy", "count": 4, "spawnInterval": 1.4 }, { "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.1 }]},
+    { "waveName": "Wave 4 - Owl Consult", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 1, "spawnInterval": 5.0 }, { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 }]},
+    { "waveName": "Wave 5", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "NinjaMouse", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "ParrotEnemy", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 6", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 4, "spawnInterval": 1.5 }, { "poolTag": "RoombaEnemy", "count": 5, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 7 - Double Owl", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 2, "spawnInterval": 5.0 }, { "poolTag": "ParrotEnemy", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 8", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 7, "spawnInterval": 0.8 }, { "poolTag": "NinjaMouse", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.35 }]},
+    { "waveName": "Wave 9", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RoombaEnemy", "count": 6, "spawnInterval": 1.0 }, { "poolTag": "ParrotEnemy", "count": 6, "spawnInterval": 0.9 }, { "poolTag": "RobotRatEnemy", "count": 4, "spawnInterval": 1.3 }]},
+    { "waveName": "Wave 10 - Final Exam", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 2, "spawnInterval": 4.0 }, { "poolTag": "ArmouredRat", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "NinjaMouse", "count": 7, "spawnInterval": 0.8 }, { "poolTag": "RobotRatEnemy", "count": 5, "spawnInterval": 1.2 }]}
+  ]
+}

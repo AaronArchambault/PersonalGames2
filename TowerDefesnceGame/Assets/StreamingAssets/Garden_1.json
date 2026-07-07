@@ -1,0 +1,15 @@
+{
+  "startingGold": 200,
+  "startingLives": 20,
+  "themeName": "Garden",
+  "waves": [
+    { "waveName": "Wave 1 - Garden Party", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "PigeonHorde", "count": 8, "spawnInterval": 0.3 }]},
+    { "waveName": "Wave 2 - Ground Crew", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 7, "spawnInterval": 0.7 }, { "poolTag": "PigeonHorde", "count": 6, "spawnInterval": 0.3 }]},
+    { "waveName": "Wave 3 - Birdbath Bonus", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "CrowEnemy", "count": 4, "spawnInterval": 1.0 }, { "poolTag": "SeagullEnemy", "count": 3, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 4 - Diggers", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.5 }, { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 5 - Air Raid", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "SeagullEnemy", "count": 6, "spawnInterval": 0.8 }, { "poolTag": "CrowEnemy", "count": 4, "spawnInterval": 1.0 }, { "poolTag": "PigeonHorde", "count": 8, "spawnInterval": 0.25 }]},
+    { "waveName": "Wave 6 - Crow Thieves", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "CrowEnemy", "count": 6, "spawnInterval": 0.8 }, { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 7 - Owl Warning", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "PigeonHorde", "count": 10, "spawnInterval": 0.25 }, { "poolTag": "OwlBoss", "count": 1, "spawnInterval": 5.0 }]},
+    { "waveName": "Wave 8 - Final Flock", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "SeagullEnemy", "count": 8, "spawnInterval": 0.6 }, { "poolTag": "CrowEnemy", "count": 6, "spawnInterval": 0.7 }, { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.2 }, { "poolTag": "PigeonHorde", "count": 10, "spawnInterval": 0.2 }]}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "startingGold": 175,
+  "startingLives": 20,
+  "themeName": "VetOffice",
+  "waves": [
+    { "waveName": "Wave 1 - Waiting Room", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 2 - Call In", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 3, "spawnInterval": 1.8 }, { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.7 }]},
+    { "waveName": "Wave 3 - Parrot Patient", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "ParrotEnemy", "count": 3, "spawnInterval": 1.5 }, { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 4 - Robot Vermin", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RoombaEnemy", "count": 3, "spawnInterval": 2.0 }, { "poolTag": "ArmouredRat", "count": 4, "spawnInterval": 1.4 }]},
+    { "waveName": "Wave 5 - Ninja Checkup", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "NinjaMouse", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "ParrotEnemy", "count": 3, "spawnInterval": 1.5 }]},
+    { "waveName": "Wave 6 - Group Appointment", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 }, { "poolTag": "ArmouredRat", "count": 5, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 7 - The Owl Consult", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "OwlBoss", "count": 1, "spawnInterval": 6.0 }, { "poolTag": "ParrotEnemy", "count": 4, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 8 - Final Diagnosis", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ArmouredRat", "count": 6, "spawnInterval": 1.0 }, { "poolTag": "NinjaMouse", "count": 5, "spawnInterval": 1.0 }, { "poolTag": "RoombaEnemy", "count": 3, "spawnInterval": 1.8 }, { "poolTag": "OwlBoss", "count": 1, "spawnInterval": 6.0 }]}
+  ]
+}

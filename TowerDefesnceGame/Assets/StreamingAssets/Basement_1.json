@@ -1,0 +1,15 @@
+{
+  "startingGold": 190,
+  "startingLives": 20,
+  "themeName": "Basement",
+  "waves": [
+    { "waveName": "Wave 1 - In the Dark", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 5, "spawnInterval": 1.0 }]},
+    { "waveName": "Wave 2 - Scurrying", "prewaveDelay": 1.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.7 }, { "poolTag": "NinjaMouse", "count": 2, "spawnInterval": 2.0 }]},
+    { "waveName": "Wave 3 - Robot Scouts", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RoombaEnemy", "count": 3, "spawnInterval": 2.0 }, { "poolTag": "ScoutMouse", "count": 6, "spawnInterval": 0.6 }]},
+    { "waveName": "Wave 4 - EMP Threat", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 3, "spawnInterval": 2.0 }, { "poolTag": "ArmouredRat", "count": 3, "spawnInterval": 1.5 }]},
+    { "waveName": "Wave 5 - Lamp Hunt", "prewaveDelay": 1.5, "enemies": [{ "poolTag": "NinjaMouse", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 6 - Roomba Army", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RoombaEnemy", "count": 5, "spawnInterval": 1.5 }, { "poolTag": "ScoutMouse", "count": 8, "spawnInterval": 0.5 }]},
+    { "waveName": "Wave 7 - Surge", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "RobotRatEnemy", "count": 4, "spawnInterval": 1.5 }, { "poolTag": "RoombaEnemy", "count": 4, "spawnInterval": 1.5 }, { "poolTag": "NinjaMouse", "count": 4, "spawnInterval": 1.2 }]},
+    { "waveName": "Wave 8 - Lights Out", "prewaveDelay": 2.0, "enemies": [{ "poolTag": "ScoutMouse", "count": 10, "spawnInterval": 0.4 }, { "poolTag": "RoombaEnemy", "count": 5, "spawnInterval": 1.2 }, { "poolTag": "RobotRatEnemy", "count": 3, "spawnInterval": 2.0 }, { "poolTag": "NinjaMouse", "count": 4, "spawnInterval": 1.0 }]}
+  ]
+}
