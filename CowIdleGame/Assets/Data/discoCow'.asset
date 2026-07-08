@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CowData
   tier: 3
   cowName: disco cow
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  tintColor: {r: 0.5251569, g: 0.28773582, b: 1, a: 1}
+  sprite: {fileID: 2364565060676392322, guid: 23b7250a099391e4f8ac4eb8fe217b61, type: 3}
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
   coinsPerSecond: 25
   mergeReward: 150
   mergeParticlePrefab: {fileID: 0}

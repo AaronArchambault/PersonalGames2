@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CowData
   tier: 1
   cowName: rainbow cow
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  tintColor: {r: 0.40428087, g: 0.7075487, b: 0.745283, a: 1}
+  sprite: {fileID: -7436059541796452876, guid: a4bb129bc4dc281498076f2e7aa2560b, type: 3}
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
   coinsPerSecond: 2
   mergeReward: 15
   mergeParticlePrefab: {fileID: 0}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CowData
   tier: 7
   cowName: cosmic udder
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  tintColor: {r: 0.8205662, g: 0.20518868, b: 0.8207547, a: 1}
+  sprite: {fileID: -3710299355032508386, guid: 2d9992d0c3c48ed4e9216226ff52f753, type: 3}
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
   coinsPerSecond: 2000
   mergeReward: 10000
   mergeParticlePrefab: {fileID: 0}

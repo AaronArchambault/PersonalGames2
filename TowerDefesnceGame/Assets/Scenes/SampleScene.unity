@@ -24031,7 +24031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShopButton
   towerPrefab: {fileID: 7611731813169373018, guid: 4fdb63cf2cda9d443835f32c15c0e34a, type: 3}
-  cost: 225
+  cost: 150
   towerName: ChonkCat
   nameText: {fileID: 1622112252}
   costText: {fileID: 1733866710}

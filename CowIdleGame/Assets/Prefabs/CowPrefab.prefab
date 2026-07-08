@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 8648083878586037675, guid: c24609dbf7629fb4ba0d6970c28cd0b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,8 +129,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.1
+  m_Offset: {x: 0, y: 0.25}
+  m_Radius: 0.55
 --- !u!114 &954821050910587065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +146,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8394542082825423906}
   tierLabel: {fileID: 0}
   nameLabel: {fileID: 8995192797409887085}
+  wanderIntervalMin: 4
+  wanderIntervalMax: 9
 --- !u!114 &8110114632827581302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0e92ea85e63b143881256f30872a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragHandler
+  dragThreshold: 8
+  dragFollowSpeed: 20
 --- !u!1 &2092793638973843793
 GameObject:
   m_ObjectHideFlags: 0
