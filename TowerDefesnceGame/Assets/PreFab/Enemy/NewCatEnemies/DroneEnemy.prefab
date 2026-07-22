@@ -86,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7933474846516340325, guid: 9d299021930c55f47b3fc84144646795, type: 3}
-  m_Color: {r: 0.0062898775, g: 0.735849, b: 0, a: 1}
+  m_Sprite: {fileID: 1241738805814647426, guid: c4ae57ab0a4cf674dac32f7246969eb6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -177,6 +177,12 @@ MonoBehaviour:
   liveDamage: 1
   deathParticlePrefab: {fileID: 0}
   healthBar: {fileID: 0}
+  canBeElite: 1
+  eliteChance: 0.1
+  eliteHealthMult: 2
+  eliteSpeedMult: 1.3
+  eliteRewardMult: 3
+  eliteColor: {r: 1, g: 0.8, b: 0, a: 1}
 --- !u!114 &8273769189938061075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +201,12 @@ MonoBehaviour:
   liveDamage: 1
   deathParticlePrefab: {fileID: 0}
   healthBar: {fileID: 0}
+  canBeElite: 1
+  eliteChance: 0.1
+  eliteHealthMult: 2
+  eliteSpeedMult: 1.3
+  eliteRewardMult: 3
+  eliteColor: {r: 1, g: 0.8, b: 0, a: 1}
   flyHeight: 0.3
   bombCooldown: 4
   bombRadius: 2
